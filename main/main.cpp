@@ -7,11 +7,11 @@
 #include <driver/mcpwm.h>
 
 using namespace aruna;
-drivers::comm::CommDriver *rs485_driver;
+comm::Link *rs485_driver;
 log::channel_t *log_m;
 extern "C" void app_main(void) {
-	comm::err_t comm_err = comm::err_t::OK;
-	control::err_t con_err = control::err_t::OK;
+	err_t comm_err = err_t::OK;
+	err_t con_err = err_t::OK;
 	xTaskCreate(blinky::start_blinky_task, "blink", 2000, NULL, NULL, NULL);
 	log_m = new log::channel_t("main", log::level_t::VERBOSE);
 
@@ -25,7 +25,7 @@ extern "C" void app_main(void) {
 			.rx_flow_ctrl_thresh = 122,
 			.use_ref_tick = false
 	};
-	rs485_driver = new aruna::drivers::comm::UART((char *) "RS485",
+	rs485_driver = new aruna::comm::UART((char *) "RS485",
 												  UART_NUM_1,
 												  23,
 												  22,
@@ -38,7 +38,7 @@ extern "C" void app_main(void) {
 
 	comm_err = comm::start(rs485_driver);
 	if ((uint8_t) comm_err) {
-		log_m->error("failed to start comm: 0x%X", comm_err);
+		log_m->error("failed to start comm: %s", err_to_char.at(comm_err));
 	}
 
 //	control setup
@@ -49,19 +49,19 @@ extern "C" void app_main(void) {
 	const gpio_num_t z_forward_pin = (gpio_num_t) 27;
 	const gpio_num_t z_backward_pin = (gpio_num_t) 14;
 
-	drivers::control::ControlActuatorDriver *left_x_driver = new drivers::control::Pwm(control::axis_mask_t::X, left_x_forward_pin,
-																					   left_x_backward_pin, MCPWM_UNIT_0,
-																					   MCPWM_TIMER_0, MCPWM0A, MCPWM0B);
+	control::Actuator *left_x_driver = new control::Pwm(control::axis_mask_t::X, left_x_forward_pin,
+														left_x_backward_pin, MCPWM_UNIT_0,
+														MCPWM_TIMER_0, MCPWM0A, MCPWM0B);
 
-	drivers::control::ControlActuatorDriver *right_x_driver = new drivers::control::Pwm(control::axis_mask_t::X, right_x_forward_pin,
-																						right_x_backward_pin, MCPWM_UNIT_0,
-																						MCPWM_TIMER_1, MCPWM1A, MCPWM1B);
+	control::Actuator *right_x_driver = new control::Pwm(control::axis_mask_t::X, right_x_forward_pin,
+														 right_x_backward_pin, MCPWM_UNIT_0,
+														 MCPWM_TIMER_1, MCPWM1A, MCPWM1B);
 
-	drivers::control::ControlActuatorDriver *z_driver = new drivers::control::Pwm(control::axis_mask_t::Z, z_forward_pin,
-																					   z_backward_pin, MCPWM_UNIT_0,
-																					  MCPWM_TIMER_2, MCPWM2A, MCPWM2B);
+	control::Actuator *z_driver = new control::Pwm(control::axis_mask_t::Z, z_forward_pin,
+												   z_backward_pin, MCPWM_UNIT_0,
+												   MCPWM_TIMER_2, MCPWM2A, MCPWM2B);
 
-	drivers::control::DriverSet::transform_t forward_transformers[2]{
+	control::ActuatorSet::transform_t forward_transformers[2]{
 			{
 					.driver = right_x_driver,
 					.transform_to = control::axis_mask_t::YAW,
@@ -78,14 +78,14 @@ extern "C" void app_main(void) {
 			}
 	};
 
-	drivers::control::ControlActuatorDriver *forward_drivers = new drivers::control::DriverSet(forward_transformers, 2);
+	control::Actuator *forward_drivers = new control::ActuatorSet(forward_transformers, 2);
 	con_err = control::register_driver(forward_drivers);
 	if((uint8_t) con_err) {
-		log_m->error("failed to register forward drivers: 0x%X", con_err);
+		log_m->error("failed to register forward drivers: %s", err_to_char.at(con_err));
 	}
 	con_err = control::register_driver(z_driver);
 	if((uint8_t) con_err) {
-		log_m->error("failed to register z driver: 0x%X", con_err);
+		log_m->error("failed to register z driver: %s", err_to_char.at(con_err));
 	}
 	if((uint8_t)control::start()) {
 		log_m->error("failed to start control");
