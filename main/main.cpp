@@ -193,5 +193,6 @@ extern "C" void app_main(void) {
 	if((uint8_t)control::start()) {
 		log_m->error("failed to start control");
 	}
+	forward_drivers->set(control::axis_mask_t::ALL, 0, control::direction_t::BOTH);
     vTaskSuspend(NULL);
 }
