@@ -42,12 +42,6 @@ extern "C" void app_main(void) {
 	}
 
 //	control setup
-	const auto left_x_forward_pin = (gpio_num_t) 32;
-	const auto left_x_backward_pin = (gpio_num_t) 33;
-	const auto right_x_backward_pin = (gpio_num_t) 25;
-	const auto right_x_forward_pin = (gpio_num_t) 26;
-	const auto z_forward_pin = (gpio_num_t) 27;
-	const auto z_backward_pin = (gpio_num_t) 14;
 	const auto left_bottom_bldc_pin = (gpio_num_t) 13;
 	const auto left_top_bldc_pin = (gpio_num_t) 12;
 	const auto right_bottom_bldc_pin = (gpio_num_t) 19;
@@ -62,18 +56,6 @@ extern "C" void app_main(void) {
 	};
 	const float bldc_min_cycle = 5.f;
 	const float bldc_max_cycle = 10.f;
-
-	control::Actuator *left_x_driver = new control::Pwm(control::axis_mask_t::X, left_x_forward_pin,
-														left_x_backward_pin, MCPWM_UNIT_0,
-														MCPWM_TIMER_0, MCPWM0A, MCPWM0B);
-
-	control::Actuator *right_x_driver = new control::Pwm(control::axis_mask_t::X, right_x_forward_pin,
-														 right_x_backward_pin, MCPWM_UNIT_0,
-														 MCPWM_TIMER_1, MCPWM1A, MCPWM1B);
-
-	control::Actuator *z_driver = new control::Pwm(control::axis_mask_t::Z, z_forward_pin,
-												   z_backward_pin, MCPWM_UNIT_0,
-												   MCPWM_TIMER_2, MCPWM2A, MCPWM2B);
 
 	control::Actuator *left_bottom_bldc_driver = new control::Pwm(control::axis_mask_t::X,
 	        left_bottom_bldc_pin,
@@ -117,20 +99,6 @@ extern "C" void app_main(void) {
 	        bldc_max_cycle);
 
 	control::ActuatorSet::transform_t forward_transformers[]{
-			{
-					.driver = right_x_driver,
-					.transform_to = control::axis_mask_t::YAW,
-					.flip_direction = true,
-					.axis = control::axis_mask_t::X,
-					.speed_percentage = 100.0
-			},
-			{
-					.driver = left_x_driver,
-					.transform_to = control::axis_mask_t::YAW,
-					.flip_direction = false,
-					.axis = control::axis_mask_t::X,
-					.speed_percentage = 100.0
-			},
 //			bldc yaw forward
             {
                     .driver = left_bottom_bldc_driver,
@@ -181,14 +149,10 @@ extern "C" void app_main(void) {
             }
 	};
 
-	control::Actuator *forward_drivers = new control::ActuatorSet(forward_transformers, 8);
+	control::Actuator *forward_drivers = new control::ActuatorSet(forward_transformers, 6);
 	con_err = control::register_driver(forward_drivers);
 	if((uint8_t) con_err) {
 		log_m->error("failed to register forward drivers: %s", err_to_char.at(con_err));
-	}
-	con_err = control::register_driver(z_driver);
-	if((uint8_t) con_err) {
-		log_m->error("failed to register z driver: %s", err_to_char.at(con_err));
 	}
 	if((uint8_t)control::start()) {
 		log_m->error("failed to start control");
