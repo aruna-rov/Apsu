@@ -42,8 +42,8 @@ extern "C" void app_main(void) {
 	}
 
 //	control setup
-	const auto left_bottom_bldc_pin = (gpio_num_t) 13;
-	const auto left_top_bldc_pin = (gpio_num_t) 12;
+	const auto left_bottom_bldc_pin = (gpio_num_t) 26;
+	const auto left_top_bldc_pin = (gpio_num_t) 25;
 	const auto right_bottom_bldc_pin = (gpio_num_t) 19;
 	const auto right_top_bldc_pin = (gpio_num_t) 21;
 
