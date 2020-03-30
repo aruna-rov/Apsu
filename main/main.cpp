@@ -46,6 +46,8 @@ extern "C" void app_main(void) {
 	const auto left_top_bldc_pin = (gpio_num_t) 25;
 	const auto right_bottom_bldc_pin = (gpio_num_t) 19;
 	const auto right_top_bldc_pin = (gpio_num_t) 21;
+	const auto left_z_bldc_pin = (gpio_num_t) 33;
+	const auto right_z_bldc_pin = (gpio_num_t) 32;
 
 	const mcpwm_config_t bldc_pwm_config = {
 	        .frequency = 50,
@@ -97,6 +99,9 @@ extern "C" void app_main(void) {
 	        bldc_pwm_config,
 	        bldc_min_cycle,
 	        bldc_max_cycle);
+
+	control::Actuator *left_z_driver = new control::esp32::Dshot(control::axis_mask_t::Z, control::direction_t::BOTH, RMT_CHANNEL_0, left_z_bldc_pin);
+	control::Actuator *right_z_driver = new control::esp32::Dshot(control::axis_mask_t::Z, control::direction_t::BOTH, RMT_CHANNEL_1, right_z_bldc_pin);
 
 	control::ActuatorSet::transform_t forward_transformers[]{
 //			bldc yaw forward
@@ -154,6 +159,14 @@ extern "C" void app_main(void) {
 	if((uint8_t) con_err) {
 		log_m->error("failed to register forward drivers: %s", err_to_char.at(con_err));
 	}
+    con_err = control::register_driver(left_z_driver);
+    if((uint8_t) con_err) {
+        log_m->error("failed to register left z driver: %s", err_to_char.at(con_err));
+    }
+    con_err = control::register_driver(right_z_driver);
+    if((uint8_t) con_err) {
+        log_m->error("failed to register right z driver: %s", err_to_char.at(con_err));
+    }
 	if((uint8_t)control::start()) {
 		log_m->error("failed to start control");
 	}
