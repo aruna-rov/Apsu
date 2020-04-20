@@ -15,9 +15,13 @@ extern "C" void app_main(void) {
 	xTaskCreate(blinky::start_blinky_task, "blink", 2000, NULL, NULL, NULL);
 	log_m = new log::channel_t("main", log::level_t::VERBOSE);
 
+    //	sis
+
+    sis::reporter::start();
+    sis::Performer* water_sensor = new sis::WaterSensor(ADC1_CHANNEL_6, "HULL");
 //	comm setup
 	uart_config_t rs485_config = {
-			.baud_rate = 921600,
+			.baud_rate = 115200,
 			.data_bits = UART_DATA_8_BITS,
 			.parity = UART_PARITY_DISABLE,
 			.stop_bits = UART_STOP_BITS_1,
