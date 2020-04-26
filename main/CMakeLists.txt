@@ -1,4 +1,4 @@
 set(COMPONENT_SRCS "main.cpp")
-set(COMPONENT_ADD_INCLUDEDIRS " ../libs/MPUdriver/include ../libs/I2Cbus/include ../libs/Aruna/include")
+set(COMPONENT_ADD_INCLUDEDIRS "../libs/Aruna/include")
 
 register_component()
