@@ -75,7 +75,7 @@ extern "C" void app_main(void) {
 	        bldc_max_cycle);
 	control::Actuator *left_top_bldc_driver = new control::Pwm(control::axis_mask_t::X,
 	        left_top_bldc_pin,
-	        MCPWM_UNIT_1,
+	        MCPWM_UNIT_0,
 	        MCPWM_TIMER_0,
 	        MCPWM0B,
 	        MCPWM_OPR_B,
@@ -95,7 +95,7 @@ extern "C" void app_main(void) {
 	        bldc_max_cycle);
 	control::Actuator *right_top_bldc_driver = new control::Pwm(control::axis_mask_t::X,
 	        right_top_bldc_pin,
-	        MCPWM_UNIT_1,
+	        MCPWM_UNIT_0,
 	        MCPWM_TIMER_1,
 	        MCPWM1B,
 	        MCPWM_OPR_B,
@@ -174,6 +174,5 @@ extern "C" void app_main(void) {
 	if((uint8_t)control::start()) {
 		log_m->error("failed to start control");
 	}
-	forward_drivers->set(control::axis_mask_t::ALL, 0, control::direction_t::BOTH);
     vTaskSuspend(NULL);
 }
