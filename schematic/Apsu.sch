@@ -14,17 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L RF_Module:ESP32-WROOM-32 U?
-U 1 1 5EBF8AC7
-P 2400 2950
-F 0 "U?" H 2400 4531 50  0000 C CNN
-F 1 "ESP32-WROOM-32" H 2400 4440 50  0000 C CNN
-F 2 "RF_Module:ESP32-WROOM-32" H 2400 1450 50  0001 C CNN
-F 3 "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf" H 2100 3000 50  0001 C CNN
-	1    2400 2950
-	1    0    0    -1  
-$EndComp
-$Comp
 L Regulator_Switching:LM2595S-3.3 U?
 U 1 1 5EBFAF38
 P 4700 1050
@@ -544,19 +533,6 @@ F 3 "https://datasheets.maximintegrated.com/en/ds/MAX1487E-MAX491E.pdf" H 7800 2
 	1    7800 2200
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector_Generic:Conn_01x02 J?
-U 1 1 5EC3CD88
-P 2850 1050
-F 0 "J?" H 2768 725 50  0000 C CNN
-F 1 "Conn_01x02" H 2768 816 50  0000 C CNN
-F 2 "" H 2850 1050 50  0001 C CNN
-F 3 "~" H 2850 1050 50  0001 C CNN
-	1    2850 1050
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	3050 950  3600 950 
 Wire Wire Line
 	3050 1050 3050 1250
 Wire Wire Line
@@ -565,12 +541,12 @@ Connection ~ 3600 1250
 $Comp
 L Connector_Generic:Conn_01x02 J?
 U 1 1 5EC453EB
-P 9250 2100
-F 0 "J?" H 9330 2092 50  0000 L CNN
-F 1 "Conn_01x02" H 9330 2001 50  0000 L CNN
-F 2 "" H 9250 2100 50  0001 C CNN
-F 3 "~" H 9250 2100 50  0001 C CNN
-	1    9250 2100
+P 9550 2100
+F 0 "J?" H 9630 2092 50  0000 L CNN
+F 1 "Conn_01x02" H 9630 2001 50  0000 L CNN
+F 2 "" H 9550 2100 50  0001 C CNN
+F 3 "~" H 9550 2100 50  0001 C CNN
+	1    9550 2100
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -643,31 +619,19 @@ F 3 "" H 7800 1700 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8200 2400 8600 2400
-Wire Wire Line
-	8600 2100 8850 2100
 Connection ~ 8600 2100
-Wire Wire Line
-	8600 2400 8850 2400
-Wire Wire Line
-	9050 2400 9050 2200
 Connection ~ 8600 2400
 $Comp
 L Device:R R?
 U 1 1 5EC55FF9
-P 8850 2250
-F 0 "R?" H 8920 2296 50  0000 L CNN
-F 1 "120" H 8920 2205 50  0000 L CNN
-F 2 "" V 8780 2250 50  0001 C CNN
-F 3 "~" H 8850 2250 50  0001 C CNN
-	1    8850 2250
+P 8850 1750
+F 0 "R?" H 8920 1796 50  0000 L CNN
+F 1 "120" H 8920 1705 50  0000 L CNN
+F 2 "" V 8780 1750 50  0001 C CNN
+F 3 "~" H 8850 1750 50  0001 C CNN
+	1    8850 1750
 	1    0    0    -1  
 $EndComp
-Connection ~ 8850 2100
-Wire Wire Line
-	8850 2100 9050 2100
-Connection ~ 8850 2400
-Wire Wire Line
-	8850 2400 9050 2400
 Text GLabel 6450 2100 0    50   Input ~ 0
 RS485-RX
 Text GLabel 6450 2400 0    50   Input ~ 0
@@ -847,4 +811,204 @@ Wire Wire Line
 Wire Wire Line
 	4950 4850 4950 4650
 Connection ~ 4500 4850
+$Comp
+L RF_Module:ESP32-WROOM-32 U?
+U 1 1 5EBF8AC7
+P 2400 2950
+F 0 "U?" H 2400 4531 50  0000 C CNN
+F 1 "ESP32-WROOM-32" H 2400 4440 50  0000 C CNN
+F 2 "RF_Module:ESP32-WROOM-32" H 2400 1450 50  0001 C CNN
+F 3 "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf" H 2100 3000 50  0001 C CNN
+	1    2400 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5ECCDB06
+P 1050 750
+F 0 "J?" V 1014 562 50  0000 R CNN
+F 1 "Conn_01x02" V 923 562 50  0000 R CNN
+F 2 "" H 1050 750 50  0001 C CNN
+F 3 "~" H 1050 750 50  0001 C CNN
+	1    1050 750 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5ECCDEB5
+P 1050 1150
+F 0 "J?" V 1014 962 50  0000 R CNN
+F 1 "Conn_01x02" V 923 962 50  0000 R CNN
+F 2 "" H 1050 1150 50  0001 C CNN
+F 3 "~" H 1050 1150 50  0001 C CNN
+	1    1050 1150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5ECCE19D
+P 1050 1550
+F 0 "J?" V 1014 1362 50  0000 R CNN
+F 1 "Conn_01x02" V 923 1362 50  0000 R CNN
+F 2 "" H 1050 1550 50  0001 C CNN
+F 3 "~" H 1050 1550 50  0001 C CNN
+	1    1050 1550
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1050 1350 850  1350
+Wire Wire Line
+	850  1350 850  1750
+Wire Wire Line
+	850  1750 1050 1750
+Wire Wire Line
+	850  1350 850  1050
+Wire Wire Line
+	850  950  1050 950 
+Connection ~ 850  1350
+Wire Wire Line
+	1150 1750 1350 1750
+Wire Wire Line
+	1350 1750 1350 1350
+Wire Wire Line
+	1350 1350 1150 1350
+Wire Wire Line
+	1150 950  1350 950 
+Wire Wire Line
+	1350 950  1350 1050
+Connection ~ 1350 1350
+$Comp
+L power:+12V #PWR?
+U 1 1 5ED02DFC
+P 1350 1050
+F 0 "#PWR?" H 1350 900 50  0001 C CNN
+F 1 "+12V" H 1365 1223 50  0000 C CNN
+F 2 "" H 1350 1050 50  0001 C CNN
+F 3 "" H 1350 1050 50  0001 C CNN
+	1    1350 1050
+	0    1    1    0   
+$EndComp
+Connection ~ 1350 1050
+Wire Wire Line
+	1350 1050 1350 1350
+$Comp
+L power:GND #PWR?
+U 1 1 5ED036F9
+P 850 1050
+F 0 "#PWR?" H 850 800 50  0001 C CNN
+F 1 "GND" H 855 877 50  0000 C CNN
+F 2 "" H 850 1050 50  0001 C CNN
+F 3 "" H 850 1050 50  0001 C CNN
+	1    850  1050
+	0    1    1    0   
+$EndComp
+Connection ~ 850  1050
+Wire Wire Line
+	850  1050 850  950 
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5EC3CD88
+P 2700 1050
+F 0 "J?" H 2618 725 50  0000 C CNN
+F 1 "Conn_01x02" H 2618 816 50  0000 C CNN
+F 2 "" H 2700 1050 50  0001 C CNN
+F 3 "~" H 2700 1050 50  0001 C CNN
+	1    2700 1050
+	-1   0    0    1   
+$EndComp
+$Comp
+L Switch:SW_DIP_x01 SW?
+U 1 1 5ED13974
+P 3300 950
+F 0 "SW?" H 3300 1217 50  0000 C CNN
+F 1 "SW_DIP_x01" H 3300 1126 50  0000 C CNN
+F 2 "" H 3300 950 50  0001 C CNN
+F 3 "~" H 3300 950 50  0001 C CNN
+	1    3300 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 950  2900 950 
+Wire Wire Line
+	2900 1050 3050 1050
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J?
+U 1 1 5ED317E1
+P 4550 2450
+F 0 "J?" H 4600 2867 50  0000 C CNN
+F 1 "Conn_02x05_Odd_Even" H 4600 2776 50  0000 C CNN
+F 2 "" H 4550 2450 50  0001 C CNN
+F 3 "~" H 4550 2450 50  0001 C CNN
+	1    4550 2450
+	1    0    0    -1  
+$EndComp
+Text GLabel 3000 2750 2    50   Input ~ 0
+I2C-SDA
+Text GLabel 3000 2850 2    50   Input ~ 0
+I2C-SCL
+Text GLabel 4350 2250 0    50   Input ~ 0
+I2C-SDA
+Text GLabel 4850 2250 2    50   Input ~ 0
+I2C-SCL
+$Comp
+L power:GND #PWR?
+U 1 1 5ED5B109
+P 4350 2550
+F 0 "#PWR?" H 4350 2300 50  0001 C CNN
+F 1 "GND" H 4355 2377 50  0000 C CNN
+F 2 "" H 4350 2550 50  0001 C CNN
+F 3 "" H 4350 2550 50  0001 C CNN
+	1    4350 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5ED5B8B2
+P 4850 2550
+F 0 "#PWR?" H 4850 2400 50  0001 C CNN
+F 1 "+3.3V" V 4865 2678 50  0000 L CNN
+F 2 "" H 4850 2550 50  0001 C CNN
+F 3 "" H 4850 2550 50  0001 C CNN
+	1    4850 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J?
+U 1 1 5ED63CAE
+P 9300 1700
+F 0 "J?" H 9272 1582 50  0000 R CNN
+F 1 "Conn_01x02_Male" H 9272 1673 50  0000 R CNN
+F 2 "" H 9300 1700 50  0001 C CNN
+F 3 "~" H 9300 1700 50  0001 C CNN
+	1    9300 1700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9100 1600 8850 1600
+Wire Wire Line
+	9100 1700 9100 2100
+Connection ~ 9100 2100
+Wire Wire Line
+	9100 2200 9100 2400
+Wire Wire Line
+	8600 2400 8850 2400
+Wire Wire Line
+	8600 2100 9100 2100
+Wire Wire Line
+	8850 1900 8850 2400
+Connection ~ 8850 2400
+Wire Wire Line
+	8850 2400 9100 2400
+Text GLabel 9350 2200 3    50   Input ~ 0
+RS485-A
+Text GLabel 9350 2100 1    50   Input ~ 0
+RS485-B
+Wire Wire Line
+	9100 2100 9350 2100
+Wire Wire Line
+	9100 2200 9350 2200
+Text GLabel 4350 2650 0    50   Input ~ 0
+RS485-A
+Text GLabel 4850 2650 2    50   Input ~ 0
+RS485-B
 $EndSCHEMATC
