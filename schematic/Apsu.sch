@@ -520,14 +520,12 @@ F 3 "" H 4350 3500 50  0001 C CNN
 	1    4350 3500
 	1    0    0    -1  
 $EndComp
-Text GLabel 3000 3950 2    50   Input ~ 0
-SIS_water
 $Comp
 L Interface_UART:MAX485E U?
 U 1 1 5ECE9CD6
 P 7800 2200
-F 0 "U?" H 7800 2881 50  0000 C CNN
-F 1 "MAX485E" H 7800 2790 50  0000 C CNN
+F 0 "U?" H 7900 2800 50  0000 C CNN
+F 1 "MAX485E" H 8000 2700 50  0000 C CNN
 F 2 "" H 7800 1500 50  0001 C CNN
 F 3 "https://datasheets.maximintegrated.com/en/ds/MAX1487E-MAX491E.pdf" H 7800 2250 50  0001 C CNN
 	1    7800 2200
@@ -604,17 +602,6 @@ F 1 "GND" H 7805 2627 50  0000 C CNN
 F 2 "" H 7800 2800 50  0001 C CNN
 F 3 "" H 7800 2800 50  0001 C CNN
 	1    7800 2800
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5EC52158
-P 7800 1700
-F 0 "#PWR?" H 7800 1550 50  0001 C CNN
-F 1 "+3.3V" H 7815 1873 50  0000 C CNN
-F 2 "" H 7800 1700 50  0001 C CNN
-F 3 "" H 7800 1700 50  0001 C CNN
-	1    7800 1700
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -815,8 +802,8 @@ $Comp
 L RF_Module:ESP32-WROOM-32 U?
 U 1 1 5EBF8AC7
 P 2400 2950
-F 0 "U?" H 2400 4531 50  0000 C CNN
-F 1 "ESP32-WROOM-32" H 2400 4440 50  0000 C CNN
+F 0 "U?" H 2550 4450 50  0000 C CNN
+F 1 "ESP32-WROOM-32" H 2850 4350 50  0000 C CNN
 F 2 "RF_Module:ESP32-WROOM-32" H 2400 1450 50  0001 C CNN
 F 3 "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf" H 2100 3000 50  0001 C CNN
 	1    2400 2950
@@ -934,42 +921,42 @@ Wire Wire Line
 $Comp
 L Connector_Generic:Conn_02x05_Odd_Even J?
 U 1 1 5ED317E1
-P 4550 2450
-F 0 "J?" H 4600 2867 50  0000 C CNN
-F 1 "Conn_02x05_Odd_Even" H 4600 2776 50  0000 C CNN
-F 2 "" H 4550 2450 50  0001 C CNN
-F 3 "~" H 4550 2450 50  0001 C CNN
-	1    4550 2450
+P 4850 2250
+F 0 "J?" H 4900 2667 50  0000 C CNN
+F 1 "Conn_02x05_Odd_Even" H 4900 2576 50  0000 C CNN
+F 2 "" H 4850 2250 50  0001 C CNN
+F 3 "~" H 4850 2250 50  0001 C CNN
+	1    4850 2250
 	1    0    0    -1  
 $EndComp
-Text GLabel 3000 2750 2    50   Input ~ 0
+Text GLabel 3700 2750 2    50   Input ~ 0
 I2C-SDA
-Text GLabel 3000 2850 2    50   Input ~ 0
+Text GLabel 3700 2850 2    50   Input ~ 0
 I2C-SCL
-Text GLabel 4350 2250 0    50   Input ~ 0
+Text GLabel 4650 2050 0    50   Input ~ 0
 I2C-SDA
-Text GLabel 4850 2250 2    50   Input ~ 0
+Text GLabel 5150 2050 2    50   Input ~ 0
 I2C-SCL
 $Comp
 L power:GND #PWR?
 U 1 1 5ED5B109
-P 4350 2550
-F 0 "#PWR?" H 4350 2300 50  0001 C CNN
-F 1 "GND" H 4355 2377 50  0000 C CNN
-F 2 "" H 4350 2550 50  0001 C CNN
-F 3 "" H 4350 2550 50  0001 C CNN
-	1    4350 2550
+P 4650 2350
+F 0 "#PWR?" H 4650 2100 50  0001 C CNN
+F 1 "GND" H 4655 2177 50  0000 C CNN
+F 2 "" H 4650 2350 50  0001 C CNN
+F 3 "" H 4650 2350 50  0001 C CNN
+	1    4650 2350
 	0    1    1    0   
 $EndComp
 $Comp
 L power:+3.3V #PWR?
 U 1 1 5ED5B8B2
-P 4850 2550
-F 0 "#PWR?" H 4850 2400 50  0001 C CNN
-F 1 "+3.3V" V 4865 2678 50  0000 L CNN
-F 2 "" H 4850 2550 50  0001 C CNN
-F 3 "" H 4850 2550 50  0001 C CNN
-	1    4850 2550
+P 5150 2350
+F 0 "#PWR?" H 5150 2200 50  0001 C CNN
+F 1 "+3.3V" V 5165 2478 50  0000 L CNN
+F 2 "" H 5150 2350 50  0001 C CNN
+F 3 "" H 5150 2350 50  0001 C CNN
+	1    5150 2350
 	0    1    1    0   
 $EndComp
 $Comp
@@ -1007,9 +994,9 @@ Wire Wire Line
 	9100 2100 9350 2100
 Wire Wire Line
 	9100 2200 9350 2200
-Text GLabel 4350 2650 0    50   Input ~ 0
+Text GLabel 4650 2450 0    50   Input ~ 0
 RS485-A
-Text GLabel 4850 2650 2    50   Input ~ 0
+Text GLabel 5150 2450 2    50   Input ~ 0
 RS485-B
 $Comp
 L Connector:Conn_01x04_Male J?
@@ -1075,4 +1062,143 @@ Connection ~ 6300 3400
 Wire Wire Line
 	6300 3300 6300 3200
 Connection ~ 6300 3300
+$Comp
+L Analog_ADC:MAX11613 U?
+U 1 1 5EC93959
+P 4850 4650
+F 0 "U?" H 5100 5000 50  0000 C CNN
+F 1 "MAX11613" H 5300 5050 50  0000 C CNN
+F 2 "Package_SO:MSOP-8_3x3mm_P0.65mm" H 5300 4300 50  0001 L CNN
+F 3 "https://datasheets.maximintegrated.com/en/ds/MAX11612-MAX11617.pdf" H 4950 5150 50  0001 C CNN
+	1    4850 4650
+	1    0    0    -1  
+$EndComp
+Text GLabel 4350 4450 0    50   Input ~ 0
+SIS_water
+Text GLabel 5350 4650 2    50   Input ~ 0
+I2C-SDA
+Text GLabel 5350 4550 2    50   Input ~ 0
+I2C-SCL
+$Comp
+L power:GND #PWR?
+U 1 1 5EC95FBB
+P 4850 5150
+F 0 "#PWR?" H 4850 4900 50  0001 C CNN
+F 1 "GND" V 4855 5022 50  0000 R CNN
+F 2 "" H 4850 5150 50  0001 C CNN
+F 3 "" H 4850 5150 50  0001 C CNN
+	1    4850 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5EC9658D
+P 4850 4250
+F 0 "#PWR?" H 4850 4100 50  0001 C CNN
+F 1 "+3.3V" V 4865 4378 50  0000 L CNN
+F 2 "" H 4850 4250 50  0001 C CNN
+F 3 "" H 4850 4250 50  0001 C CNN
+	1    4850 4250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5ECA2233
+P 3650 2400
+F 0 "#PWR?" H 3650 2250 50  0001 C CNN
+F 1 "+3.3V" V 3665 2528 50  0000 L CNN
+F 2 "" H 3650 2400 50  0001 C CNN
+F 3 "" H 3650 2400 50  0001 C CNN
+	1    3650 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3700 2750 3650 2750
+$Comp
+L Device:R R?
+U 1 1 5ECC0470
+P 3500 2700
+F 0 "R?" H 3570 2746 50  0000 L CNN
+F 1 "R" H 3570 2655 50  0000 L CNN
+F 2 "" V 3430 2700 50  0001 C CNN
+F 3 "~" H 3500 2700 50  0001 C CNN
+	1    3500 2700
+	1    0    0    -1  
+$EndComp
+Connection ~ 3500 2850
+Wire Wire Line
+	3500 2850 3000 2850
+$Comp
+L Device:R R?
+U 1 1 5ECC587C
+P 3650 2600
+F 0 "R?" H 3720 2646 50  0000 L CNN
+F 1 "R" H 3720 2555 50  0000 L CNN
+F 2 "" V 3580 2600 50  0001 C CNN
+F 3 "~" H 3650 2600 50  0001 C CNN
+	1    3650 2600
+	1    0    0    -1  
+$EndComp
+Connection ~ 3650 2750
+Wire Wire Line
+	3650 2750 3000 2750
+Wire Wire Line
+	3500 2550 3500 2400
+Wire Wire Line
+	3500 2400 3650 2400
+Wire Wire Line
+	3650 2450 3650 2400
+Connection ~ 3650 2400
+Wire Wire Line
+	3500 2850 3700 2850
+$Comp
+L Device:C C?
+U 1 1 5ECDE2A9
+P 4850 4100
+F 0 "C?" H 4965 4146 50  0000 L CNN
+F 1 "0.1uF" H 4965 4055 50  0000 L CNN
+F 2 "" H 4888 3950 50  0001 C CNN
+F 3 "~" H 4850 4100 50  0001 C CNN
+	1    4850 4100
+	1    0    0    -1  
+$EndComp
+Connection ~ 4850 4250
+$Comp
+L power:GND #PWR?
+U 1 1 5ECDF4E3
+P 4850 3950
+F 0 "#PWR?" H 4850 3700 50  0001 C CNN
+F 1 "GND" V 4855 3822 50  0000 R CNN
+F 2 "" H 4850 3950 50  0001 C CNN
+F 3 "" H 4850 3950 50  0001 C CNN
+	1    4850 3950
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5EC52158
+P 7800 1700
+F 0 "#PWR?" H 7800 1550 50  0001 C CNN
+F 1 "+3.3V" H 7815 1873 50  0000 C CNN
+F 2 "" H 7800 1700 50  0001 C CNN
+F 3 "" H 7800 1700 50  0001 C CNN
+	1    7800 1700
+	1    0    0    -1  
+$EndComp
+Text GLabel 3000 3950 2    50   Input ~ 0
+SPI-MOSI
+Text GLabel 3000 2150 2    50   Input ~ 0
+SPI-MISO
+Text GLabel 3000 2250 2    50   Input ~ 0
+SPI-SCLK
+Text GLabel 3000 1950 2    50   Input ~ 0
+SPI-UART_SS
+Text GLabel 4650 2150 0    50   Input ~ 0
+SPI-MOSI
+Text GLabel 4650 2250 0    50   Input ~ 0
+SPI-MISO
+Text GLabel 5150 2150 2    50   Input ~ 0
+SPI-SCLK
+Text GLabel 5150 2250 2    50   Input ~ 0
+SPI-UART_SS
 $EndSCHEMATC
