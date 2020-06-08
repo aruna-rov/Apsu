@@ -135,19 +135,6 @@ F 3 "" H 2400 1250 50  0001 C CNN
 	1    2400 1250
 	0    1    1    0   
 $EndComp
-$Comp
-L Connector:Conn_01x04_Male J?
-U 1 1 5EF64F3D
-P 4850 1950
-AR Path="/5EF64F3D" Ref="J?"  Part="1" 
-AR Path="/5EF07089/5EF64F3D" Ref="J8"  Part="1" 
-F 0 "J8" H 4958 2231 50  0000 C CNN
-F 1 "Conn_01x04_Male" H 4958 2140 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 4850 1950 50  0001 C CNN
-F 3 "~" H 4850 1950 50  0001 C CNN
-	1    4850 1950
-	1    0    0    -1  
-$EndComp
 Text GLabel 5050 1850 2    50   Input ~ 0
 BLDC_top_left
 Text GLabel 5050 1950 2    50   Input ~ 0
@@ -164,7 +151,7 @@ AR Path="/5EF64F47" Ref="J?"  Part="1"
 AR Path="/5EF07089/5EF64F47" Ref="J9"  Part="1" 
 F 0 "J9" H 4958 3231 50  0000 C CNN
 F 1 "Conn_01x08_Male" H 4958 3140 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 4850 2750 50  0001 C CNN
+F 2 "Connector_JST:JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical" H 4850 2750 50  0001 C CNN
 F 3 "~" H 4850 2750 50  0001 C CNN
 	1    4850 2750
 	1    0    0    -1  
@@ -303,75 +290,27 @@ Wire Wire Line
 Wire Wire Line
 	6050 2950 6800 2950
 $Comp
-L Connector:Conn_01x04_Male J?
-U 1 1 5EF64F90
-P 6150 1900
-AR Path="/5EF64F90" Ref="J?"  Part="1" 
-AR Path="/5EF07089/5EF64F90" Ref="J10"  Part="1" 
-F 0 "J10" H 6258 2181 50  0000 C CNN
-F 1 "Conn_01x04_Male" H 6258 2090 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 6150 1900 50  0001 C CNN
-F 3 "~" H 6150 1900 50  0001 C CNN
-	1    6150 1900
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x04_Male J?
-U 1 1 5EF64F96
-P 7000 1900
-AR Path="/5EF64F96" Ref="J?"  Part="1" 
-AR Path="/5EF07089/5EF64F96" Ref="J11"  Part="1" 
-F 0 "J11" H 7108 2181 50  0000 C CNN
-F 1 "Conn_01x04_Male" H 7108 2090 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 7000 1900 50  0001 C CNN
-F 3 "~" H 7000 1900 50  0001 C CNN
-	1    7000 1900
-	1    0    0    -1  
+L Connector_Generic:Conn_01x05 J8
+U 1 1 5ED5189E
+P 4850 1950
+F 0 "J8" H 4768 1525 50  0000 C CNN
+F 1 "Conn_01x05" H 4768 1616 50  0000 C CNN
+F 2 "Connector_JST:JST_XH_B5B-XH-A_1x05_P2.50mm_Vertical" H 4850 1950 50  0001 C CNN
+F 3 "~" H 4850 1950 50  0001 C CNN
+	1    4850 1950
+	-1   0    0    1   
 $EndComp
 $Comp
 L power:GND #PWR?
-U 1 1 5EF64F9C
-P 7200 2100
-AR Path="/5EF64F9C" Ref="#PWR?"  Part="1" 
-AR Path="/5EF07089/5EF64F9C" Ref="#PWR036"  Part="1" 
-F 0 "#PWR036" H 7200 1850 50  0001 C CNN
-F 1 "GND" H 7205 1927 50  0000 C CNN
-F 2 "" H 7200 2100 50  0001 C CNN
-F 3 "" H 7200 2100 50  0001 C CNN
-	1    7200 2100
-	1    0    0    -1  
+U 1 1 5ED56EC8
+P 5050 1750
+AR Path="/5ED56EC8" Ref="#PWR?"  Part="1" 
+AR Path="/5EF07089/5ED56EC8" Ref="#PWR0101"  Part="1" 
+F 0 "#PWR0101" H 5050 1500 50  0001 C CNN
+F 1 "GND" V 5055 1577 50  0000 C CNN
+F 2 "" H 5050 1750 50  0001 C CNN
+F 3 "" H 5050 1750 50  0001 C CNN
+	1    5050 1750
+	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	7200 2150 7200 2100
-Connection ~ 7200 2100
-Wire Wire Line
-	7200 2100 7200 2000
-Wire Wire Line
-	7200 2000 7200 1900
-Connection ~ 7200 2000
-Wire Wire Line
-	7200 1900 7200 1800
-Connection ~ 7200 1900
-$Comp
-L power:+5V #PWR?
-U 1 1 5EF64FA9
-P 6350 2100
-AR Path="/5EF64FA9" Ref="#PWR?"  Part="1" 
-AR Path="/5EF07089/5EF64FA9" Ref="#PWR035"  Part="1" 
-F 0 "#PWR035" H 6350 1950 50  0001 C CNN
-F 1 "+5V" H 6365 2273 50  0000 C CNN
-F 2 "" H 6350 2100 50  0001 C CNN
-F 3 "" H 6350 2100 50  0001 C CNN
-	1    6350 2100
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	6350 2100 6350 2000
-Connection ~ 6350 2100
-Wire Wire Line
-	6350 2000 6350 1900
-Connection ~ 6350 2000
-Wire Wire Line
-	6350 1900 6350 1800
-Connection ~ 6350 1900
 $EndSCHEMATC

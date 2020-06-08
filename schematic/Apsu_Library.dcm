@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LIS2MDL
+D Magnetic sensor, digital output, 50 gauss magnetic field dynamic range, ultra-low power high performance 3-axis magnetometer
+K compass, magneto, ecompass, e-compass, magnetic
+F https://www.st.com/resource/en/datasheet/lis2mdl.pdf
+$ENDCMP
+#
+$CMP LSM6DSOX
+D iNEMO inertial module with Machine Learning Core, Finite State Machine and advanced Digital Functions. Ultra-low power for battery operated IoT, Gaming, Wearable and Personal Electronics. 
+K Accelerometer Gyroscope MEMS
+F https://www.st.com/resource/en/datasheet/lsm6dsox.pdf
+$ENDCMP
+#
+#End Doc Library
