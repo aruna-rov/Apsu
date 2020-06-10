@@ -34,7 +34,7 @@ AR Path="/5EFB8F9E" Ref="J?"  Part="1"
 AR Path="/5EFB4D6F/5EFB8F9E" Ref="J19"  Part="1" 
 F 0 "J19" H 7230 3792 50  0000 L CNN
 F 1 "Conn_01x02" H 7230 3701 50  0000 L CNN
-F 2 "Connector_JST:JST_XH_B2B-XH-AM_1x02_P2.50mm_Vertical" H 7150 3800 50  0001 C CNN
+F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 7150 3800 50  0001 C CNN
 F 3 "~" H 7150 3800 50  0001 C CNN
 	1    7150 3800
 	1    0    0    -1  

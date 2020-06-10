@@ -144,29 +144,16 @@ BLDC_bottom_left
 Text GLabel 5050 2150 2    50   Input ~ 0
 BLDC_bottom_right
 $Comp
-L Connector:Conn_01x08_Male J?
-U 1 1 5EF64F47
-P 4850 2750
-AR Path="/5EF64F47" Ref="J?"  Part="1" 
-AR Path="/5EF07089/5EF64F47" Ref="J9"  Part="1" 
-F 0 "J9" H 4958 3231 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 4958 3140 50  0000 C CNN
-F 2 "Connector_JST:JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical" H 4850 2750 50  0001 C CNN
-F 3 "~" H 4850 2750 50  0001 C CNN
-	1    4850 2750
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR?
 U 1 1 5EF64F4D
-P 5050 2650
+P 5050 2750
 AR Path="/5EF64F4D" Ref="#PWR?"  Part="1" 
 AR Path="/5EF07089/5EF64F4D" Ref="#PWR033"  Part="1" 
-F 0 "#PWR033" H 5050 2400 50  0001 C CNN
-F 1 "GND" V 5055 2522 50  0000 R CNN
-F 2 "" H 5050 2650 50  0001 C CNN
-F 3 "" H 5050 2650 50  0001 C CNN
-	1    5050 2650
+F 0 "#PWR033" H 5050 2500 50  0001 C CNN
+F 1 "GND" V 5055 2622 50  0000 R CNN
+F 2 "" H 5050 2750 50  0001 C CNN
+F 3 "" H 5050 2750 50  0001 C CNN
+	1    5050 2750
 	0    -1   -1   0   
 $EndComp
 Text GLabel 6800 2850 2    50   Input ~ 0
@@ -312,5 +299,16 @@ F 2 "" H 5050 1750 50  0001 C CNN
 F 3 "" H 5050 1750 50  0001 C CNN
 	1    5050 1750
 	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x05 J9
+U 1 1 5EE5CFE9
+P 4850 2950
+F 0 "J9" H 4768 2525 50  0000 C CNN
+F 1 "Conn_01x05" H 4768 2616 50  0000 C CNN
+F 2 "Connector_JST:JST_XH_B5B-XH-A_1x05_P2.50mm_Vertical" H 4850 2950 50  0001 C CNN
+F 3 "~" H 4850 2950 50  0001 C CNN
+	1    4850 2950
+	-1   0    0    1   
 $EndComp
 $EndSCHEMATC
