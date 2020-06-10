@@ -815,4 +815,149 @@ F 3 "https://www.st.com/resource/en/datasheet/lsm6dsox.pdf" H 7900 1300 50  0001
 	1    7800 1950
 	1    0    0    -1  
 $EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5EE0F747
+P 9600 4250
+F 0 "#PWR?" H 9600 4000 50  0001 C CNN
+F 1 "GND" H 9605 4077 50  0000 C CNN
+F 2 "" H 9600 4250 50  0001 C CNN
+F 3 "" H 9600 4250 50  0001 C CNN
+	1    9600 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 4000 9500 4250
+Wire Wire Line
+	9500 4250 9600 4250
+Wire Wire Line
+	9700 4000 9700 4250
+Wire Wire Line
+	9700 4250 9600 4250
+Connection ~ 9600 4250
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5EE11E57
+P 10350 3700
+F 0 "#PWR?" H 10350 3550 50  0001 C CNN
+F 1 "+3.3V" V 10365 3828 50  0000 L CNN
+F 2 "" H 10350 3700 50  0001 C CNN
+F 3 "" H 10350 3700 50  0001 C CNN
+	1    10350 3700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	10200 3700 10350 3700
+Text GLabel 10200 3500 2    50   Input ~ 0
+I2C-SDA
+Text GLabel 10200 3300 2    50   Input ~ 0
+I2C-SCL
+$Comp
+L power:GND #PWR?
+U 1 1 5EE1306F
+P 10400 3100
+F 0 "#PWR?" H 10400 2850 50  0001 C CNN
+F 1 "GND" V 10405 2972 50  0000 R CNN
+F 2 "" H 10400 3100 50  0001 C CNN
+F 3 "" H 10400 3100 50  0001 C CNN
+	1    10400 3100
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	10200 3100 10400 3100
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5EE18751
+P 9600 2300
+AR Path="/5EE18751" Ref="#PWR?"  Part="1" 
+AR Path="/5EF89400/5EE18751" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 9600 2150 50  0001 C CNN
+F 1 "+3.3V" V 9615 2428 50  0000 L CNN
+F 2 "" H 9600 2300 50  0001 C CNN
+F 3 "" H 9600 2300 50  0001 C CNN
+	1    9600 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5EE1875D
+P 9850 2450
+AR Path="/5EE1875D" Ref="C?"  Part="1" 
+AR Path="/5EF89400/5EE1875D" Ref="C?"  Part="1" 
+F 0 "C?" V 10000 2500 50  0000 L CNN
+F 1 "100nF" V 10000 2250 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9888 2300 50  0001 C CNN
+F 3 "~" H 9850 2450 50  0001 C CNN
+	1    9850 2450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5EE18769
+P 10150 2450
+AR Path="/5EE18769" Ref="#PWR?"  Part="1" 
+AR Path="/5EF89400/5EE18769" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 10150 2200 50  0001 C CNN
+F 1 "GND" V 10155 2322 50  0000 R CNN
+F 2 "" H 10150 2450 50  0001 C CNN
+F 3 "" H 10150 2450 50  0001 C CNN
+	1    10150 2450
+	0    -1   -1   0   
+$EndComp
+Connection ~ 9600 2300
+Wire Wire Line
+	10000 2450 10150 2450
+Wire Wire Line
+	9200 2450 9100 2450
+$Comp
+L power:GND #PWR?
+U 1 1 5EE18763
+P 9100 2450
+AR Path="/5EE18763" Ref="#PWR?"  Part="1" 
+AR Path="/5EF89400/5EE18763" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 9100 2200 50  0001 C CNN
+F 1 "GND" V 9105 2322 50  0000 R CNN
+F 2 "" H 9100 2450 50  0001 C CNN
+F 3 "" H 9100 2450 50  0001 C CNN
+	1    9100 2450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5EE18757
+P 9350 2450
+AR Path="/5EE18757" Ref="C?"  Part="1" 
+AR Path="/5EF89400/5EE18757" Ref="C?"  Part="1" 
+F 0 "C?" V 9500 2600 50  0000 L CNN
+F 1 "100nF" V 9500 2350 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9388 2300 50  0001 C CNN
+F 3 "~" H 9350 2450 50  0001 C CNN
+	1    9350 2450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Sensor:BME280 U?
+U 1 1 5EE0D3B6
+P 9600 3400
+F 0 "U?" H 9171 3446 50  0000 R CNN
+F 1 "BME280" H 9171 3355 50  0000 R CNN
+F 2 "Package_LGA:Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering" H 11100 2950 50  0001 C CNN
+F 3 "https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BME280-DS002.pdf" H 9600 3200 50  0001 C CNN
+	1    9600 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9700 2300 9700 2450
+Wire Wire Line
+	9600 2300 9700 2300
+Wire Wire Line
+	9700 2450 9700 2800
+Connection ~ 9700 2450
+Wire Wire Line
+	9500 2300 9500 2450
+Wire Wire Line
+	9500 2300 9600 2300
+Wire Wire Line
+	9500 2450 9500 2800
+Connection ~ 9500 2450
 $EndSCHEMATC
