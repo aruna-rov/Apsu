@@ -1,0 +1,8 @@
+*.pyc
+*.fcstd1
+*.FCStd1
+*.fcstd2
+*.FCStd2
+Private
+*.stl
+*.dxf
