@@ -110,7 +110,7 @@ Text GLabel 3150 3500 2    50   Input ~ 0
 SPI-MISO
 Text GLabel 3150 3600 2    50   Input ~ 0
 SPI-SCLK
-Text GLabel 3150 3300 2    50   Input ~ 0
+Text GLabel 3150 4500 2    50   Input ~ 0
 SPI-UART_SS
 Text GLabel 3150 4400 2    50   Input ~ 0
 DS18B20
