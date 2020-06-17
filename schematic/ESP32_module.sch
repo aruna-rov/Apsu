@@ -111,7 +111,7 @@ SPI-MISO
 Text GLabel 3150 3600 2    50   Input ~ 0
 SPI-SCLK
 Text GLabel 3150 4500 2    50   Input ~ 0
-SPI-UART_SS
+SPI-SS0
 Text GLabel 3150 4400 2    50   Input ~ 0
 DS18B20
 $Comp
@@ -239,61 +239,48 @@ F 3 "~" H 5850 2600 50  0001 C CNN
 	1    5850 2600
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector_Generic:Conn_02x05_Odd_Even J?
-U 1 1 5EF14A1B
-P 5850 3600
-AR Path="/5EF14A1B" Ref="J?"  Part="1" 
-AR Path="/5ED629AF/5EF14A1B" Ref="J3"  Part="1" 
-F 0 "J3" H 5900 4017 50  0000 C CNN
-F 1 "Conn_02x05_Odd_Even" H 5900 3926 50  0000 C CNN
-F 2 "Connector_IDC:IDC-Header_2x05_P2.54mm_Vertical" H 5850 3600 50  0001 C CNN
-F 3 "~" H 5850 3600 50  0001 C CNN
-	1    5850 3600
-	1    0    0    -1  
-$EndComp
-Text GLabel 5650 3400 0    50   Input ~ 0
+Text GLabel 5650 3500 0    50   Input ~ 0
 I2C-SDA
-Text GLabel 6150 3400 2    50   Input ~ 0
+Text GLabel 6150 3500 2    50   Input ~ 0
 I2C-SCL
 $Comp
 L power:GND #PWR?
 U 1 1 5EF14A23
-P 5650 3700
+P 5650 3400
 AR Path="/5EF14A23" Ref="#PWR?"  Part="1" 
 AR Path="/5ED629AF/5EF14A23" Ref="#PWR011"  Part="1" 
-F 0 "#PWR011" H 5650 3450 50  0001 C CNN
-F 1 "GND" V 5655 3527 50  0000 C CNN
-F 2 "" H 5650 3700 50  0001 C CNN
-F 3 "" H 5650 3700 50  0001 C CNN
-	1    5650 3700
+F 0 "#PWR011" H 5650 3150 50  0001 C CNN
+F 1 "GND" V 5655 3227 50  0000 C CNN
+F 2 "" H 5650 3400 50  0001 C CNN
+F 3 "" H 5650 3400 50  0001 C CNN
+	1    5650 3400
 	0    1    1    0   
 $EndComp
 $Comp
 L power:+3.3V #PWR?
 U 1 1 5EF14A29
-P 6150 3700
+P 6150 3400
 AR Path="/5EF14A29" Ref="#PWR?"  Part="1" 
 AR Path="/5ED629AF/5EF14A29" Ref="#PWR014"  Part="1" 
-F 0 "#PWR014" H 6150 3550 50  0001 C CNN
-F 1 "+3.3V" V 6165 3828 50  0000 L CNN
-F 2 "" H 6150 3700 50  0001 C CNN
-F 3 "" H 6150 3700 50  0001 C CNN
-	1    6150 3700
+F 0 "#PWR014" H 6150 3250 50  0001 C CNN
+F 1 "+3.3V" V 6165 3528 50  0000 L CNN
+F 2 "" H 6150 3400 50  0001 C CNN
+F 3 "" H 6150 3400 50  0001 C CNN
+	1    6150 3400
 	0    1    1    0   
 $EndComp
-Text GLabel 5650 3800 0    50   Input ~ 0
-RS485-A
-Text GLabel 6150 3800 2    50   Input ~ 0
-RS485-B
-Text GLabel 5650 3500 0    50   Input ~ 0
-SPI-MOSI
 Text GLabel 5650 3600 0    50   Input ~ 0
-SPI-MISO
-Text GLabel 6150 3500 2    50   Input ~ 0
-SPI-SCLK
+RS485-A
 Text GLabel 6150 3600 2    50   Input ~ 0
-SPI-UART_SS
+RS485-B
+Text GLabel 5650 3700 0    50   Input ~ 0
+SPI-MOSI
+Text GLabel 5650 3800 0    50   Input ~ 0
+SPI-MISO
+Text GLabel 6150 3700 2    50   Input ~ 0
+SPI-SCLK
+Text GLabel 6150 3800 2    50   Input ~ 0
+SPI-SS0
 $Comp
 L Device:R R1
 U 1 1 5EFCC7D9
@@ -528,4 +515,23 @@ F 3 "" H 7500 2500 50  0001 C CNN
 	1    7500 2500
 	0    1    1    0   
 $EndComp
+$Comp
+L Connector_Generic:Conn_02x06_Odd_Even J?
+U 1 1 5EEFB1AB
+P 5850 3600
+F 0 "J?" H 5900 4017 50  0000 C CNN
+F 1 "Conn_02x06_Odd_Even" H 5900 3926 50  0000 C CNN
+F 2 "" H 5850 3600 50  0001 C CNN
+F 3 "~" H 5850 3600 50  0001 C CNN
+	1    5850 3600
+	1    0    0    -1  
+$EndComp
+Text GLabel 5650 3900 0    50   Input ~ 0
+SPI-SS1
+Text GLabel 6150 3900 2    50   Input ~ 0
+SPI-SS2
+Text GLabel 3150 4800 2    50   Input ~ 0
+SPI-SS1
+Text GLabel 3150 4900 2    50   Input ~ 0
+SPI-SS2
 $EndSCHEMATC
