@@ -14,19 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Interface_UART:MAX485E U?
-U 1 1 5EFB8F98
-P 5400 3900
-AR Path="/5EFB8F98" Ref="U?"  Part="1" 
-AR Path="/5EFB4D6F/5EFB8F98" Ref="U5"  Part="1" 
-F 0 "U5" H 5500 4500 50  0000 C CNN
-F 1 "MAX485E" H 5600 4400 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5400 3200 50  0001 C CNN
-F 3 "https://datasheets.maximintegrated.com/en/ds/MAX1487E-MAX491E.pdf" H 5400 3950 50  0001 C CNN
-	1    5400 3900
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector_Generic:Conn_01x02 J?
 U 1 1 5EFB8F9E
 P 7150 3800
@@ -269,9 +256,9 @@ Wire Wire Line
 Connection ~ 6450 4100
 Wire Wire Line
 	6450 4100 6700 4100
-Text GLabel 6950 3900 3    50   Input ~ 0
-RS485-A
 Text GLabel 6950 3800 1    50   Input ~ 0
+RS485-A
+Text GLabel 6950 3900 3    50   Input ~ 0
 RS485-B
 Wire Wire Line
 	6700 3800 6950 3800
@@ -352,4 +339,31 @@ F 3 "" H 5400 3400 50  0001 C CNN
 	1    5400 3400
 	1    0    0    -1  
 $EndComp
+$Comp
+L Interface_UART:SP3485CN U?
+U 1 1 5EEA53A1
+P 5400 3950
+F 0 "U?" H 5400 4531 50  0000 C CNN
+F 1 "SP3485CN" H 5400 4440 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6450 3600 50  0001 C CIN
+F 3 "http://www.icbase.com/pdf/SPX/SPX00480106.pdf" H 5400 3950 50  0001 C CNN
+	1    5400 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 3850 5800 3800
+Wire Wire Line
+	5800 4050 5800 4100
+Wire Wire Line
+	5000 4100 5000 4150
+Wire Wire Line
+	5000 4050 5000 4000
+Wire Wire Line
+	5000 3850 5000 3900
+Wire Wire Line
+	5000 3800 5000 3750
+Wire Wire Line
+	5400 3550 5400 3400
+Wire Wire Line
+	5400 4350 5400 4500
 $EndSCHEMATC
