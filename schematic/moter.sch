@@ -187,19 +187,6 @@ F 3 "~" H 5850 2950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L power:+3.3V #PWR?
-U 1 1 5EF64F61
-P 5650 3300
-AR Path="/5EF64F61" Ref="#PWR?"  Part="1" 
-AR Path="/5EF07089/5EF64F61" Ref="#PWR034"  Part="1" 
-F 0 "#PWR034" H 5650 3150 50  0001 C CNN
-F 1 "+3.3V" H 5665 3473 50  0000 C CNN
-F 2 "" H 5650 3300 50  0001 C CNN
-F 3 "" H 5650 3300 50  0001 C CNN
-	1    5650 3300
-	-1   0    0    1   
-$EndComp
-$Comp
 L Device:R R?
 U 1 1 5EF64F67
 P 6200 3050
@@ -244,7 +231,6 @@ Wire Wire Line
 	6000 2950 6000 3300
 Wire Wire Line
 	6000 3300 5650 3300
-Connection ~ 5650 3300
 Wire Wire Line
 	6350 3050 6350 3300
 Wire Wire Line
@@ -311,4 +297,18 @@ F 3 "~" H 4850 2950 50  0001 C CNN
 	1    4850 2950
 	-1   0    0    1   
 $EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5EED624C
+P 5650 3300
+AR Path="/5EED624C" Ref="#PWR?"  Part="1" 
+AR Path="/5EF07089/5EED624C" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 5650 3050 50  0001 C CNN
+F 1 "GND" V 5655 3172 50  0000 R CNN
+F 2 "" H 5650 3300 50  0001 C CNN
+F 3 "" H 5650 3300 50  0001 C CNN
+	1    5650 3300
+	1    0    0    -1  
+$EndComp
+Connection ~ 5650 3300
 $EndSCHEMATC
