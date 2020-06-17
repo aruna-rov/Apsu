@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 6
+Sheet 1 5
 Title ""
 Date ""
 Rev ""
@@ -18,12 +18,6 @@ S 1600 800  500  150
 U 5ED629AF
 F0 "ESP32_module" 50
 F1 "ESP32_module.sch" 50
-$EndSheet
-$Sheet
-S 800  800  500  150 
-U 5EEC6D97
-F0 "power" 50
-F1 "power.sch" 50
 $EndSheet
 $Sheet
 S 800  1200 500  150 
