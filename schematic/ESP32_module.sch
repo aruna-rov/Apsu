@@ -516,10 +516,10 @@ F 3 "" H 7500 2500 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Connector_Generic:Conn_02x06_Odd_Even J?
+L Connector_Generic:Conn_02x06_Odd_Even J3
 U 1 1 5EEFB1AB
 P 5850 3600
-F 0 "J?" H 5900 4017 50  0000 C CNN
+F 0 "J3" H 5900 4017 50  0000 C CNN
 F 1 "Conn_02x06_Odd_Even" H 5900 3926 50  0000 C CNN
 F 2 "" H 5850 3600 50  0001 C CNN
 F 3 "~" H 5850 3600 50  0001 C CNN

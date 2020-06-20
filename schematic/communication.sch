@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 6 5
+Sheet 5 5
 Title ""
 Date ""
 Rev ""
@@ -340,10 +340,10 @@ F 3 "" H 5400 3400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Interface_UART:SP3485CN U?
+L Interface_UART:SP3485CN U2
 U 1 1 5EEA53A1
 P 5400 3950
-F 0 "U?" H 5400 4531 50  0000 C CNN
+F 0 "U2" H 5400 4531 50  0000 C CNN
 F 1 "SP3485CN" H 5400 4440 50  0000 C CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6450 3600 50  0001 C CIN
 F 3 "http://www.icbase.com/pdf/SPX/SPX00480106.pdf" H 5400 3950 50  0001 C CNN

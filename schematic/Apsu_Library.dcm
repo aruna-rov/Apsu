@@ -1,5 +1,11 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP FAN4860UC5X
+D The FAN4860 is a low−power boost regulator designed to provide aregulated  3.3  V,  5.0  V  or  5.4  V  output  from  a  single  cell  Lithium  orLi−Ion battery.
+K boost, step-up
+F https://datasheet.octopart.com/FAN4860UC5X-ON-Semiconductor-datasheet-137329910.pdf
+$ENDCMP
+#
 $CMP LIS2MDL
 D Magnetic sensor, digital output, 50 gauss magnetic field dynamic range, ultra-low power high performance 3-axis magnetometer
 K compass, magneto, ecompass, e-compass, magnetic
@@ -7,7 +13,7 @@ F https://www.st.com/resource/en/datasheet/lis2mdl.pdf
 $ENDCMP
 #
 $CMP LSM6DSOX
-D iNEMO inertial module with Machine Learning Core, Finite State Machine and advanced Digital Functions. Ultra-low power for battery operated IoT, Gaming, Wearable and Personal Electronics. 
+D iNEMO inertial module with Machine Learning Core, Finite State Machine and advanced Digital Functions. Ultra-low power for battery operated IoT, Gaming, Wearable and Personal Electronics.
 K Accelerometer Gyroscope MEMS
 F https://www.st.com/resource/en/datasheet/lsm6dsox.pdf
 $ENDCMP
