@@ -1,0 +1,242 @@
+connectors:
+  cell 0: &18560
+    pinout: [plus, min]
+    type: 3x 18650 battery cell  
+  cell 1:
+    <<: *18560
+  cell 2:
+    <<: *18560
+  BMS:
+    pinout: [12V, GND, B0, B1, B2, B3]
+    type: 3s 18560 Battery manager
+    
+  MX60:
+    pinout: [12V, GND]
+    type: MX60 distributor
+  
+  BLHeli:
+    pinout: [12V, GND, A0, B0, C0, A1, B1, C1, dshot_0, dshot_1]
+    type: BLHeli 32bit ESC
+    
+  BLDC Z left: &bldc
+    pinout: [A, B, C]
+    type: 930KV A2212 brushless DC motor
+    
+  BLDC Z right:
+    <<: *bldc
+    
+  BLDC top left:
+    <<: *bldc    
+    
+  BLDC top right:
+    <<: *bldc
+    
+  BLDC bottom left:
+    <<: *bldc
+    
+  BLDC bottom right:
+    <<: *bldc
+    
+  ESP32:
+    pinout: [5V, GND, GPIO26, GPIO25, GPIO19, GPIO21, GPIO33, GPIO32, GPIO34, RS485 A,RS485 B]
+    type: ESP32 control board
+    
+  SimonK distributor:
+    pinout: [12V, 5V, GND, pwm_0, pwm_1, pwm_2, pwm_3]
+    type: prototype board to keep wires clean
+  
+  SimonK top left: &simonk
+    pinout: [12V, 5V, GND, pwm, A, B, C]
+    type: SimonK ESC
+    
+  SimonK top right:
+    <<: *simonk
+    
+  SimonK bottom left:
+    <<: *simonk
+    
+  SimonK bottom right:
+    <<: *simonk
+               
+  Rain meter:
+   pinout: [5V, GND, Vout]
+   type: water meter to detect leak
+   
+  RJ-45:
+    pinout: [A, B]
+    type: RS485 connection
+   
+cables:
+  w0: &bms_wire
+    wirecount: 1
+    colors: [GN]
+    category: bundle
+  w1:
+    <<: *bms_wire
+  w2:
+    <<: *bms_wire
+  w3:
+    <<: *bms_wire
+  w4:
+    <<: *bms_wire
+  w5:
+    <<: *bms_wire
+    
+    
+  12V 0: &12V
+    wirecount: 2
+    length: 1
+    colors: [RD, BK]
+  12V 1:
+    <<: *12V
+  12V 2:
+    <<: *12V
+    
+  z left: &bldc_wire
+    wirecount: 3
+    colors: [BK, RD, YE]
+    
+  z right:
+    <<: *bldc_wire
+    
+  top left:
+    <<: *bldc_wire
+    
+  top right:
+    <<: *bldc_wire
+    
+  bottom left:
+    <<: *bldc_wire
+    
+  bottom right:
+    <<: *bldc_wire
+  
+  z axis:
+    wirecount: 3
+    colors: [BK, VT, PK]
+  
+  ESP to SimonK:
+    wirecount: 6
+    colors: [RD, BK, VT, PK, YE, GN]
+  
+  SimonK D to top left: &simonkd_wire
+    wirecount: 4
+    colors: [RD, RD, BK, VT]
+    
+  SimonK D to top right:
+    <<: *simonkd_wire
+    colors: [RD, RD, BK, PK]
+    
+  SimonK D to bottom left:
+    <<: *simonkd_wire
+    colors: [RD, RD, BK, YE]
+    
+  SimonK D to bottom right:
+    <<: *simonkd_wire
+    colors: [RD, RD, BK, GN]
+    
+  rain:
+    wirecount: 3
+    colors: [RD, BK, WH]
+    
+  ethernet:
+    wirecount: 2
+    colors: [WH, YE]
+    notes: A=O/W, B=O
+
+connections:
+  -
+    - cell 0: [2]
+    - w0: [1]
+    - BMS: [3]
+  -
+    - cell 0: [1]
+    - w1: [1]
+    - cell 1: [2]
+  -
+    - cell 0: [1]
+    - w2: [1]
+    - BMS: [4]
+  -
+    - cell 1: [1]
+    - w3: [1]
+    - cell 2: [2]
+  -
+    - cell 1: [1]
+    - w4: [1]
+    - BMS: [5]
+  -
+    - cell 2: [1]
+    - w5: [1]
+    - BMS: [6]
+    
+  -
+    - BMS: [1-2]
+    - 12V 0: [1-2]
+    - MX60: [1-2]
+  -
+    - MX60: [1-2]
+    - 12V 1: [1-2]
+    - BLHeli: [1-2]
+  -
+    - BLHeli: [3-5]
+    - z left: [1-3]
+    - BLDC Z left: [1-3]
+  -
+    - BLHeli: [6-8]
+    - z right: [1-3]
+    - BLDC Z right: [1-3]
+  -
+    - ESP32: [2, 7-8]
+    - z axis: [1-3]
+    - BLHeli: [2, 9-10]
+  - 
+    - ESP32: [1-6]
+    - ESP to SimonK: [1-6]
+    - SimonK distributor: [2-7]
+  -
+    - SimonK distributor: [1-4]
+    - SimonK D to top left: [1-4]
+    - SimonK top left: [1-4]
+  -
+    - SimonK top left: [5-7]
+    - top left: [1-3]
+    - BLDC top left : [1-3]
+  -
+    - SimonK distributor: [1-3, 5]
+    - SimonK D to top right: [1-4]
+    - SimonK top right: [1-4]
+  -
+    - SimonK top right: [5-7]
+    - top right: [1-3]
+    - BLDC top right : [1-3]
+  -
+    - SimonK distributor: [1-3, 6]
+    - SimonK D to bottom left: [1-4]
+    - SimonK bottom left: [1-4]
+  -
+    - SimonK bottom left: [5-7]
+    - bottom left: [1-3]
+    - BLDC bottom left : [1-3]
+  -
+    - SimonK distributor: [1-3, 7]
+    - SimonK D to bottom right: [1-4]
+    - SimonK bottom right: [1-4]
+  -
+    - SimonK bottom right: [5-7]
+    - bottom right: [1-3]
+    - BLDC bottom right: [1-3]
+  - 
+    - MX60: [1-2]
+    - 12V 2: [1-2]
+    - SimonK distributor: [1,3]
+  -
+    - ESP32: [1,2, 9]
+    - rain: [1-3]
+    - Rain meter: [1-3]
+  -
+    - ESP32: [10-11]
+    - ethernet: [1-2]
+    - RJ-45: [1-2]
+  
+    
