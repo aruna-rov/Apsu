@@ -85,28 +85,28 @@ I2C-SCL
 $Comp
 L Device:R R2
 U 1 1 5EE7A7CF
-P 3900 3800
-F 0 "R2" H 3970 3846 50  0000 L CNN
-F 1 "10k" H 3970 3755 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3830 3800 50  0001 C CNN
-F 3 "~" H 3900 3800 50  0001 C CNN
-	1    3900 3800
-	1    0    0    -1  
+P 4250 4500
+F 0 "R2" H 4320 4546 50  0000 L CNN
+F 1 "10k" H 4320 4455 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4180 4500 50  0001 C CNN
+F 3 "~" H 4250 4500 50  0001 C CNN
+	1    4250 4500
+	-1   0    0    1   
 $EndComp
 $Comp
 L Device:R R3
 U 1 1 5EE7A7D6
-P 4250 3800
-F 0 "R3" H 4320 3846 50  0000 L CNN
-F 1 "10k" H 4320 3755 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4180 3800 50  0001 C CNN
-F 3 "~" H 4250 3800 50  0001 C CNN
-	1    4250 3800
-	1    0    0    -1  
+P 3900 4500
+F 0 "R3" H 3970 4546 50  0000 L CNN
+F 1 "10k" H 3970 4455 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3830 4500 50  0001 C CNN
+F 3 "~" H 3900 4500 50  0001 C CNN
+	1    3900 4500
+	-1   0    0    1   
 $EndComp
 Text GLabel 3150 5300 2    50   Input ~ 0
 SPI-MOSI
-Text GLabel 3150 3500 2    50   Input ~ 0
+Text GLabel 4000 3500 2    50   Input ~ 0
 SPI-MISO
 Text GLabel 3150 3600 2    50   Input ~ 0
 SPI-SCLK
@@ -117,15 +117,15 @@ DS18B20
 $Comp
 L power:+3.3V #PWR?
 U 1 1 5EE96C0B
-P 4100 3550
+P 4050 4750
 AR Path="/5EE96C0B" Ref="#PWR?"  Part="1" 
 AR Path="/5ED629AF/5EE96C0B" Ref="#PWR06"  Part="1" 
-F 0 "#PWR06" H 4100 3400 50  0001 C CNN
-F 1 "+3.3V" V 4115 3678 50  0000 L CNN
-F 2 "" H 4100 3550 50  0001 C CNN
-F 3 "" H 4100 3550 50  0001 C CNN
-	1    4100 3550
-	1    0    0    -1  
+F 0 "#PWR06" H 4050 4600 50  0001 C CNN
+F 1 "+3.3V" V 4065 4878 50  0000 L CNN
+F 2 "" H 4050 4750 50  0001 C CNN
+F 3 "" H 4050 4750 50  0001 C CNN
+	1    4050 4750
+	-1   0    0    1   
 $EndComp
 $Comp
 L power:+3.3V #PWR?
@@ -275,8 +275,6 @@ Text GLabel 6150 3600 2    50   Input ~ 0
 RS485-B
 Text GLabel 5650 3700 0    50   Input ~ 0
 SPI-MOSI
-Text GLabel 5650 3800 0    50   Input ~ 0
-SPI-MISO
 Text GLabel 6150 3700 2    50   Input ~ 0
 SPI-SCLK
 Text GLabel 6150 3800 2    50   Input ~ 0
@@ -387,22 +385,22 @@ Wire Wire Line
 Wire Wire Line
 	3150 4200 3900 4200
 Wire Wire Line
-	3900 3950 3900 4200
+	4250 4350 4250 4100
 Connection ~ 3900 4200
 Wire Wire Line
 	3900 4200 4400 4200
 Wire Wire Line
-	4250 3950 4250 4100
+	3900 4350 3900 4200
 Connection ~ 4250 4100
 Wire Wire Line
 	4250 4100 4400 4100
 Wire Wire Line
-	3900 3650 4100 3650
+	4250 4650 4050 4650
 Wire Wire Line
-	4100 3550 4100 3650
-Connection ~ 4100 3650
+	4050 4750 4050 4650
+Connection ~ 4050 4650
 Wire Wire Line
-	4100 3650 4250 3650
+	4050 4650 3900 4650
 Text GLabel 6150 2700 2    50   Input ~ 0
 JTAG-TDI
 Text GLabel 6150 2600 2    50   Input ~ 0
@@ -534,4 +532,121 @@ Text GLabel 3150 4800 2    50   Input ~ 0
 SPI-SS1
 Text GLabel 3150 4900 2    50   Input ~ 0
 SPI-SS2
+$Comp
+L Device:R R12
+U 1 1 5EF62F89
+P 4000 3350
+F 0 "R12" H 4070 3396 50  0000 L CNN
+F 1 "100k" H 4070 3305 50  0000 L CNN
+F 2 "" V 3930 3350 50  0001 C CNN
+F 3 "~" H 4000 3350 50  0001 C CNN
+	1    4000 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 3500 3150 3500
+$Comp
+L power:GND #PWR?
+U 1 1 5EF653F3
+P 4000 3200
+AR Path="/5EF653F3" Ref="#PWR?"  Part="1" 
+AR Path="/5ED629AF/5EF653F3" Ref="#PWR0101"  Part="1" 
+F 0 "#PWR0101" H 4000 2950 50  0001 C CNN
+F 1 "GND" V 4005 3072 50  0000 R CNN
+F 2 "" H 4000 3200 50  0001 C CNN
+F 3 "" H 4000 3200 50  0001 C CNN
+	1    4000 3200
+	-1   0    0    1   
+$EndComp
+Text GLabel 5050 4400 2    50   Input ~ 0
+DS18B20
+$Comp
+L Device:R R13
+U 1 1 5EF994A3
+P 5050 4550
+F 0 "R13" H 5120 4596 50  0000 L CNN
+F 1 "5k" H 5120 4505 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4980 4550 50  0001 C CNN
+F 3 "~" H 5050 4550 50  0001 C CNN
+	1    5050 4550
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5EF99A29
+P 5050 4700
+AR Path="/5EF99A29" Ref="#PWR?"  Part="1" 
+AR Path="/5ED629AF/5EF99A29" Ref="#PWR0102"  Part="1" 
+F 0 "#PWR0102" H 5050 4550 50  0001 C CNN
+F 1 "+3.3V" V 5065 4828 50  0000 L CNN
+F 2 "" H 5050 4700 50  0001 C CNN
+F 3 "" H 5050 4700 50  0001 C CNN
+	1    5050 4700
+	-1   0    0    1   
+$EndComp
+Text GLabel 5650 3800 0    50   Input ~ 0
+SPI-MISO
+Text GLabel 7750 4100 2    50   Input ~ 0
+SPI-SS0
+Text GLabel 7750 4500 2    50   Input ~ 0
+SPI-SS2
+Text GLabel 7750 4300 2    50   Input ~ 0
+SPI-SS1
+$Comp
+L Device:R R?
+U 1 1 5F10E23C
+P 7600 4500
+F 0 "R?" V 7700 4450 50  0000 L CNN
+F 1 "10k" V 7600 4450 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7530 4500 50  0001 C CNN
+F 3 "~" H 7600 4500 50  0001 C CNN
+	1    7600 4500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F10F25F
+P 7600 4300
+F 0 "R?" V 7700 4250 50  0000 L CNN
+F 1 "10k" V 7600 4250 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7530 4300 50  0001 C CNN
+F 3 "~" H 7600 4300 50  0001 C CNN
+	1    7600 4300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F10F5B3
+P 7600 4100
+F 0 "R?" V 7700 4050 50  0000 L CNN
+F 1 "10k" V 7600 4050 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7530 4100 50  0001 C CNN
+F 3 "~" H 7600 4100 50  0001 C CNN
+	1    7600 4100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F1101D6
+P 7350 4300
+AR Path="/5F1101D6" Ref="#PWR?"  Part="1" 
+AR Path="/5ED629AF/5F1101D6" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7350 4050 50  0001 C CNN
+F 1 "GND" V 7355 4172 50  0000 R CNN
+F 2 "" H 7350 4300 50  0001 C CNN
+F 3 "" H 7350 4300 50  0001 C CNN
+	1    7350 4300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7450 4500 7350 4500
+Wire Wire Line
+	7350 4500 7350 4300
+Wire Wire Line
+	7350 4100 7450 4100
+Connection ~ 7350 4300
+Wire Wire Line
+	7350 4300 7350 4100
+Wire Wire Line
+	7450 4300 7350 4300
 $EndSCHEMATC

@@ -1,0 +1,7 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MAX6682MUA+T
+D MAX6682MUA+T
+F http://datasheets.maximintegrated.com/en/ds/MAX6682.pdf
+$ENDCMP
+# end doc library

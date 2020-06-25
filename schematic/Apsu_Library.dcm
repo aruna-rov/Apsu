@@ -18,4 +18,10 @@ K Accelerometer Gyroscope MEMS
 F https://www.st.com/resource/en/datasheet/lsm6dsox.pdf
 $ENDCMP
 #
+$CMP MC74HC138A
+D Decoder 3 to 8 active low outputs
+K TTL DECOD DECOD8
+F https://datasheet.octopart.com/MC74HC138ANG-ON-Semiconductor-datasheet-532955.pdf
+$ENDCMP
+#
 #End Doc Library
