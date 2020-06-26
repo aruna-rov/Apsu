@@ -265,68 +265,6 @@ Wire Wire Line
 Wire Wire Line
 	6700 3900 6950 3900
 $Comp
-L Device:C C?
-U 1 1 5EFB900E
-P 5350 2850
-AR Path="/5EFB900E" Ref="C?"  Part="1" 
-AR Path="/5EFB4D6F/5EFB900E" Ref="C18"  Part="1" 
-F 0 "C18" H 5465 2896 50  0000 L CNN
-F 1 "0.1uF" H 5465 2805 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5388 2700 50  0001 C CNN
-F 3 "~" H 5350 2850 50  0001 C CNN
-	1    5350 2850
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C?
-U 1 1 5EFB9008
-P 4900 2850
-AR Path="/5EFB9008" Ref="C?"  Part="1" 
-AR Path="/5EFB4D6F/5EFB9008" Ref="C17"  Part="1" 
-F 0 "C17" H 5015 2896 50  0000 L CNN
-F 1 "10uF" H 5015 2805 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4938 2700 50  0001 C CNN
-F 3 "~" H 4900 2850 50  0001 C CNN
-	1    4900 2850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5150 3000 5350 3000
-Wire Wire Line
-	4900 3000 5150 3000
-Connection ~ 5150 3000
-Wire Wire Line
-	5150 2700 5350 2700
-Wire Wire Line
-	4900 2700 5150 2700
-Connection ~ 5150 2700
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5EFB9014
-P 5150 2700
-AR Path="/5EFB9014" Ref="#PWR?"  Part="1" 
-AR Path="/5EFB4D6F/5EFB9014" Ref="#PWR068"  Part="1" 
-F 0 "#PWR068" H 5150 2550 50  0001 C CNN
-F 1 "+3.3V" H 5165 2873 50  0000 C CNN
-F 2 "" H 5150 2700 50  0001 C CNN
-F 3 "" H 5150 2700 50  0001 C CNN
-	1    5150 2700
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5EFB901A
-P 5150 3000
-AR Path="/5EFB901A" Ref="#PWR?"  Part="1" 
-AR Path="/5EFB4D6F/5EFB901A" Ref="#PWR069"  Part="1" 
-F 0 "#PWR069" H 5150 2750 50  0001 C CNN
-F 1 "GND" H 5155 2827 50  0000 C CNN
-F 2 "" H 5150 3000 50  0001 C CNN
-F 3 "" H 5150 3000 50  0001 C CNN
-	1    5150 3000
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+3.3V #PWR?
 U 1 1 5EFB9039
 P 5400 3400
@@ -366,4 +304,66 @@ Wire Wire Line
 	5400 3550 5400 3400
 Wire Wire Line
 	5400 4350 5400 4500
+$Comp
+L power:GND #PWR?
+U 1 1 5EFB901A
+P 5150 3000
+AR Path="/5EFB901A" Ref="#PWR?"  Part="1" 
+AR Path="/5EFB4D6F/5EFB901A" Ref="#PWR069"  Part="1" 
+F 0 "#PWR069" H 5150 2750 50  0001 C CNN
+F 1 "GND" H 5155 2827 50  0000 C CNN
+F 2 "" H 5150 3000 50  0001 C CNN
+F 3 "" H 5150 3000 50  0001 C CNN
+	1    5150 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5EFB9014
+P 5150 2700
+AR Path="/5EFB9014" Ref="#PWR?"  Part="1" 
+AR Path="/5EFB4D6F/5EFB9014" Ref="#PWR068"  Part="1" 
+F 0 "#PWR068" H 5150 2550 50  0001 C CNN
+F 1 "+3.3V" H 5165 2873 50  0000 C CNN
+F 2 "" H 5150 2700 50  0001 C CNN
+F 3 "" H 5150 2700 50  0001 C CNN
+	1    5150 2700
+	1    0    0    -1  
+$EndComp
+Connection ~ 5150 2700
+Wire Wire Line
+	4900 2700 5150 2700
+Wire Wire Line
+	5150 2700 5350 2700
+Connection ~ 5150 3000
+Wire Wire Line
+	4900 3000 5150 3000
+Wire Wire Line
+	5150 3000 5350 3000
+$Comp
+L Device:C C?
+U 1 1 5EFB9008
+P 4900 2850
+AR Path="/5EFB9008" Ref="C?"  Part="1" 
+AR Path="/5EFB4D6F/5EFB9008" Ref="C17"  Part="1" 
+F 0 "C17" H 5015 2896 50  0000 L CNN
+F 1 "10uF" H 5015 2805 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4938 2700 50  0001 C CNN
+F 3 "~" H 4900 2850 50  0001 C CNN
+	1    4900 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5EFB900E
+P 5350 2850
+AR Path="/5EFB900E" Ref="C?"  Part="1" 
+AR Path="/5EFB4D6F/5EFB900E" Ref="C18"  Part="1" 
+F 0 "C18" H 5465 2896 50  0000 L CNN
+F 1 "0.1uF" H 5465 2805 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5388 2700 50  0001 C CNN
+F 3 "~" H 5350 2850 50  0001 C CNN
+	1    5350 2850
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

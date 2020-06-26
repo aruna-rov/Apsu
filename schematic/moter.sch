@@ -311,4 +311,10 @@ F 3 "" H 5650 3300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 5650 3300
+Text GLabel 3100 2250 2    50   Input ~ 0
+PWM_custom_0
+Text GLabel 3100 2350 2    50   Input ~ 0
+PWM_custom_1
+Text GLabel 3100 2450 2    50   Input ~ 0
+PWM_custom_2
 $EndSCHEMATC
