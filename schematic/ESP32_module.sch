@@ -678,44 +678,18 @@ $EndComp
 $Comp
 L power:+3.3V #PWR?
 U 1 1 5EFA72FF
-P 6250 5150
+P 6250 5050
 AR Path="/5EFA72FF" Ref="#PWR?"  Part="1" 
 AR Path="/5ED629AF/5EFA72FF" Ref="#PWR0110"  Part="1" 
-F 0 "#PWR0110" H 6250 5000 50  0001 C CNN
-F 1 "+3.3V" V 6265 5278 50  0000 L CNN
-F 2 "" H 6250 5150 50  0001 C CNN
-F 3 "" H 6250 5150 50  0001 C CNN
-	1    6250 5150
+F 0 "#PWR0110" H 6250 4900 50  0001 C CNN
+F 1 "+3.3V" V 6265 5178 50  0000 L CNN
+F 2 "" H 6250 5050 50  0001 C CNN
+F 3 "" H 6250 5050 50  0001 C CNN
+	1    6250 5050
 	0    1    1    0   
 $EndComp
 Text GLabel 6250 5350 2    50   Input ~ 0
 IO2
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5EFAB189
-P 6250 5250
-AR Path="/5EFAB189" Ref="#PWR?"  Part="1" 
-AR Path="/5ED629AF/5EFAB189" Ref="#PWR0111"  Part="1" 
-F 0 "#PWR0111" H 6250 5100 50  0001 C CNN
-F 1 "+3.3V" V 6265 5378 50  0000 L CNN
-F 2 "" H 6250 5250 50  0001 C CNN
-F 3 "" H 6250 5250 50  0001 C CNN
-	1    6250 5250
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5EFAB62F
-P 6250 5050
-AR Path="/5EFAB62F" Ref="#PWR?"  Part="1" 
-AR Path="/5ED629AF/5EFAB62F" Ref="#PWR0112"  Part="1" 
-F 0 "#PWR0112" H 6250 4800 50  0001 C CNN
-F 1 "GND" V 6255 4922 50  0000 R CNN
-F 2 "" H 6250 5050 50  0001 C CNN
-F 3 "" H 6250 5050 50  0001 C CNN
-	1    6250 5050
-	0    -1   -1   0   
-$EndComp
 Text GLabel 6250 5450 2    50   Input ~ 0
 ADC_custom_0
 Text GLabel 6250 5550 2    50   Input ~ 0
@@ -778,4 +752,14 @@ $EndComp
 Connection ~ 6650 3000
 Wire Wire Line
 	6650 3000 6850 3000
+Text GLabel 1950 3300 0    50   Input ~ 0
+Sensor_VP
+Text GLabel 6250 5150 2    50   Input ~ 0
+Sensor_VP
+Text GLabel 1950 3400 0    50   Input ~ 0
+Sensor_VN
+Text GLabel 6250 5250 2    50   Input ~ 0
+Sensor_VN
+Text GLabel 6250 5950 2    50   Input ~ 0
+PWM_custom_3
 $EndSCHEMATC

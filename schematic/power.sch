@@ -500,17 +500,6 @@ F 3 "~" H 2600 4250 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Analog_ADC:INA219AxD U2
-U 1 1 5EF164D7
-P 3250 2500
-F 0 "U2" V 3296 2056 50  0000 R CNN
-F 1 "INA219AxD" V 3205 2056 50  0000 R CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 4050 2150 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/ina219.pdf" H 3600 2400 50  0001 C CNN
-	1    3250 2500
-	0    -1   -1   0   
-$EndComp
-$Comp
 L Device:R R2
 U 1 1 5EF36BB9
 P 3250 4000
@@ -668,17 +657,9 @@ Wire Wire Line
 Connection ~ 2300 2550
 Wire Wire Line
 	2300 2550 2300 2350
-Wire Wire Line
-	3350 2100 3450 2100
-Wire Wire Line
-	3700 2100 3700 2500
-Connection ~ 3450 2100
-Wire Wire Line
-	3450 2100 3700 2100
-Connection ~ 3700 2500
 Text GLabel 3050 2100 1    50   Input ~ 0
 I2C-SDA
-Text GLabel 3150 2100 1    50   Input ~ 0
+Text GLabel 3150 1750 1    50   Input ~ 0
 I2C-SCL
 Text GLabel 5450 1650 1    50   Input ~ 0
 I2C-SDA
@@ -728,4 +709,35 @@ F 3 "" H 5900 1950 50  0001 C CNN
 	1    5900 1950
 	-1   0    0    1   
 $EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5EFBA46A
+P 3350 2100
+F 0 "#PWR?" H 3350 1950 50  0001 C CNN
+F 1 "+3.3V" H 3365 2273 50  0000 C CNN
+F 2 "" H 3350 2100 50  0001 C CNN
+F 3 "" H 3350 2100 50  0001 C CNN
+	1    3350 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Analog_ADC:INA219AxD U2
+U 1 1 5EF164D7
+P 3250 2500
+F 0 "U2" V 3296 2056 50  0000 R CNN
+F 1 "INA219AxD" V 3205 2056 50  0000 R CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 4050 2150 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/ina219.pdf" H 3600 2400 50  0001 C CNN
+	1    3250 2500
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3150 2100 3150 1800
+Wire Wire Line
+	3450 2100 3450 1800
+Wire Wire Line
+	3450 1800 3150 1800
+Connection ~ 3150 1800
+Wire Wire Line
+	3150 1800 3150 1750
 $EndSCHEMATC

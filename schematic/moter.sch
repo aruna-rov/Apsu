@@ -86,14 +86,7 @@ Wire Wire Line
 	1700 2850 1700 2950
 Connection ~ 1700 2850
 Wire Wire Line
-	1700 2950 1700 3050
-Connection ~ 1700 2950
-Wire Wire Line
-	1700 3050 1700 3150
-Connection ~ 1700 3050
-Wire Wire Line
 	1700 3150 1700 3250
-Connection ~ 1700 3150
 $Comp
 L power:GND #PWR?
 U 1 1 5EF4331F
@@ -317,4 +310,13 @@ Text GLabel 3100 2350 2    50   Input ~ 0
 PWM_custom_1
 Text GLabel 3100 2450 2    50   Input ~ 0
 PWM_custom_2
+Text GLabel 3100 2550 2    50   Input ~ 0
+PWM_custom_3
+Connection ~ 1700 3150
+Wire Wire Line
+	1700 3050 1700 3150
+Connection ~ 1700 3050
+Connection ~ 1700 2950
+Wire Wire Line
+	1700 2950 1700 3050
 $EndSCHEMATC
