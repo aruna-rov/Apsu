@@ -1,0 +1,7 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP PCA9685BS,118
+D PCA9685BS,118
+F https://www.nxp.com/docs/en/data-sheet/PCA9685.pdf
+$ENDCMP
+# end doc library

@@ -1,0 +1,76 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# NXP Semiconductors PCA9685BS,118
+#
+DEF PCA9685BS,118 U 0 40 Y Y 1 L N
+F0 "U" 0 200 50 H V L CNN 
+F1 "PCA9685BS,118" 0 300 50 H V L CNN 
+F2 "NXP_Semiconductors-SOT788-1-02_2016-0-*" 0 400 50 H I L CNN 
+F3 "https://www.nxp.com/docs/en/data-sheet/PCA9685.pdf" 0 500 50 H I L CNN 
+F4 "+85°C" 0 600 50 H I L CNN "ambient temperature range high"
+F5 "-40°C" 0 700 50 H I L CNN "ambient temperature range low"
+F6 "No" 0 800 50 H I L CNN "automotive"
+F7 "IC" 0 900 50 H I L CNN "category"
+F8 "Integrated Circuits (ICs)" 0 1000 50 H I L CNN "device class L1"
+F9 "Power Management ICs" 0 1100 50 H I L CNN "device class L2"
+F10 "LED Drivers" 0 1200 50 H I L CNN "device class L3"
+F11 "IC LED DRVR LIN DIM 25MA 28HVQFN" 0 1300 50 H I L CNN "digikey description"
+F12 "568-5305-1-ND" 0 1400 50 H I L CNN "digikey part number"
+F13 "I2C,PWM" 0 1500 50 H I L CNN "dimming"
+F14 "https://www.nxp.com/docs/en/package-information/SOT788-1.pdf" 0 1600 50 H I L CNN "footprint url"
+F15 "1mm" 0 1700 50 H I L CNN "height"
+F16 "QFN65P600X600X100-28" 0 1800 50 H I L CNN "ipc land pattern name"
+F17 "Yes" 0 1900 50 H I L CNN "lead free"
+F18 "f2ab0676b9fbc36e" 0 2000 50 H I L CNN "library id"
+F19 "NXP Semiconductors" 0 2100 50 H I L CNN "manufacturer"
+F20 "400mW" 0 2200 50 H I L CNN "max power dissipation"
+F21 "5.5V" 0 2300 50 H I L CNN "max supply voltage"
+F22 "2.3V" 0 2400 50 H I L CNN "min supply voltage"
+F23 "LED Display Drivers 16-CH 12-BIT PWM FM+ I2C-BUS LED CTRL" 0 2500 50 H I L CNN "mouser description"
+F24 "771-PCA9685BS118" 0 2600 50 H I L CNN "mouser part number"
+F25 "6mA" 0 2700 50 H I L CNN "nominal supply current"
+F26 "16" 0 2800 50 H I L CNN "number of outputs"
+F27 "25mA" 0 2900 50 H I L CNN "output current"
+F28 "5.5V" 0 3000 50 H I L CNN "output voltage"
+F29 "HVQFN28" 0 3100 50 H I L CNN "package"
+F30 "Yes" 0 3200 50 H I L CNN "rohs"
+F31 "0mm" 0 3300 50 H I L CNN "standoff height"
+F32 "24-1526Hz" 0 3400 50 H I L CNN "switching frequency"
+F33 "+85°C" 0 3500 50 H I L CNN "temperature range high"
+F34 "-40°C" 0 3600 50 H I L CNN "temperature range low"
+DRAW
+X ~OE~ 20 100 -400 100 R 40 40 1 1 I 
+X A0 26 100 -700 100 R 40 40 1 1 I 
+X A1 27 100 -800 100 R 40 40 1 1 I 
+X A2 28 100 -900 100 R 40 40 1 1 I 
+X A3 1 100 -1000 100 R 40 40 1 1 I 
+X A4 2 100 -1100 100 R 40 40 1 1 I 
+X A5 21 100 -1200 100 R 40 40 1 1 I 
+X EXTCLK 22 100 -1900 100 R 40 40 1 1 I 
+X SCL 23 100 -1500 100 R 40 40 1 1 I C
+X SDA 24 100 -1600 100 R 40 40 1 1 B 
+X VDD 25 100 0 100 R 40 40 1 1 W 
+X EP 29 1400 -1700 100 L 40 40 1 1 W 
+X LED0 3 1400 0 100 L 40 40 1 1 O 
+X LED1 4 1400 -100 100 L 40 40 1 1 O 
+X LED2 5 1400 -200 100 L 40 40 1 1 O 
+X LED3 6 1400 -300 100 L 40 40 1 1 O 
+X LED4 7 1400 -400 100 L 40 40 1 1 O 
+X LED5 8 1400 -500 100 L 40 40 1 1 O 
+X LED6 9 1400 -600 100 L 40 40 1 1 O 
+X LED7 10 1400 -700 100 L 40 40 1 1 O 
+X LED8 12 1400 -800 100 L 40 40 1 1 O 
+X LED9 13 1400 -900 100 L 40 40 1 1 O 
+X LED10 14 1400 -1000 100 L 40 40 1 1 O 
+X LED11 15 1400 -1100 100 L 40 40 1 1 O 
+X LED12 16 1400 -1200 100 L 40 40 1 1 O 
+X LED13 17 1400 -1300 100 L 40 40 1 1 O 
+X LED14 18 1400 -1400 100 L 40 40 1 1 O 
+X LED15 19 1400 -1500 100 L 40 40 1 1 O 
+X VSS 11 1400 -1900 100 L 40 40 1 1 W 
+S 200 100 1300 -2000 1 1 0 f
+ENDDRAW
+ENDDEF
+#
+# End Library

@@ -1,3 +1,5 @@
 (fp_lib_table
-  (lib (name MAX6682)(type KiCad)(uri ${KIPRJMOD}/lib/eec.pretty)(options "")(descr ""))
+  (lib (name MAX6682)(type KiCad)(uri ${KIPRJMOD}/lib/MAX6682/eec.pretty)(options "")(descr ""))
+  (lib (name Apsu)(type KiCad)(uri ${KIPRJMOD}/Apsu.pretty)(options "")(descr ""))
+  (lib (name PCA9685)(type KiCad)(uri ${KIPRJMOD}/lib/PCA9685/eec.pretty)(options "")(descr ""))
 )

@@ -26,13 +26,13 @@ F 3 "" H 2550 1900 50  0001 C CNN
 	1    2550 1900
 	1    0    0    -1  
 $EndComp
-Text GLabel 3150 4000 2    50   Input ~ 0
+Text GLabel 4100 4000 2    50   Input ~ 0
 JTAG-TDO
-Text GLabel 3150 3700 2    50   Input ~ 0
+Text GLabel 4100 3700 2    50   Input ~ 0
 JTAG-TDI
-Text GLabel 3150 3800 2    50   Input ~ 0
+Text GLabel 4100 3800 2    50   Input ~ 0
 JTAG-TCK
-Text GLabel 3150 3900 2    50   Input ~ 0
+Text GLabel 4100 3900 2    50   Input ~ 0
 JTAG-TMS
 $Comp
 L power:GND #PWR05
@@ -234,7 +234,7 @@ AR Path="/5EEBC795" Ref="J?"  Part="1"
 AR Path="/5ED629AF/5EEBC795" Ref="J2"  Part="1" 
 F 0 "J2" H 5900 3017 50  0000 C CNN
 F 1 "Conn_02x05_Odd_Even" H 5900 2926 50  0000 C CNN
-F 2 "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD" H 5850 2600 50  0001 C CNN
+F 2 "Apsu:10pin1.27mmIDC" H 5850 2600 50  0001 C CNN
 F 3 "~" H 5850 2600 50  0001 C CNN
 	1    5850 2600
 	1    0    0    -1  
@@ -649,17 +649,6 @@ Wire Wire Line
 	7350 4300 7350 4100
 Wire Wire Line
 	7450 4300 7350 4300
-$Comp
-L Connector:Conn_01x10_Male J14
-U 1 1 5EFA3108
-P 6050 5350
-F 0 "J14" H 6158 5931 50  0000 C CNN
-F 1 "Conn_01x10_Male" H 6158 5840 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical" H 6050 5350 50  0001 C CNN
-F 3 "~" H 6050 5350 50  0001 C CNN
-	1    6050 5350
-	1    0    0    -1  
-$EndComp
 Text GLabel 3150 3300 2    50   Input ~ 0
 IO2
 $Comp
@@ -762,4 +751,75 @@ Text GLabel 6250 5250 2    50   Input ~ 0
 Sensor_VN
 Text GLabel 6250 5950 2    50   Input ~ 0
 PWM_custom_3
+$Comp
+L Device:R R27
+U 1 1 5F00381B
+P 3700 3700
+F 0 "R27" V 3650 3600 50  0000 C CNN
+F 1 "100" V 3700 3700 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3630 3700 50  0001 C CNN
+F 3 "~" H 3700 3700 50  0001 C CNN
+	1    3700 3700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R28
+U 1 1 5F009BC7
+P 3700 3800
+F 0 "R28" V 3650 3700 50  0000 C CNN
+F 1 "100" V 3700 3800 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3630 3800 50  0001 C CNN
+F 3 "~" H 3700 3800 50  0001 C CNN
+	1    3700 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R29
+U 1 1 5F009E9D
+P 3700 3900
+F 0 "R29" V 3650 3800 50  0000 C CNN
+F 1 "100" V 3700 3900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3630 3900 50  0001 C CNN
+F 3 "~" H 3700 3900 50  0001 C CNN
+	1    3700 3900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R30
+U 1 1 5F00A19D
+P 3700 4000
+F 0 "R30" V 3650 3900 50  0000 C CNN
+F 1 "100" V 3700 4000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3630 4000 50  0001 C CNN
+F 3 "~" H 3700 4000 50  0001 C CNN
+	1    3700 4000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3150 3700 3550 3700
+Wire Wire Line
+	3150 3800 3550 3800
+Wire Wire Line
+	3150 3900 3550 3900
+Wire Wire Line
+	3150 4000 3550 4000
+Wire Wire Line
+	3850 3700 4100 3700
+Wire Wire Line
+	3850 3800 4100 3800
+Wire Wire Line
+	3850 3900 4100 3900
+Wire Wire Line
+	3850 4000 4100 4000
+$Comp
+L Connector:Conn_01x11_Male J14
+U 1 1 5F020876
+P 6050 5450
+F 0 "J14" H 6158 6131 50  0000 C CNN
+F 1 "Conn_01x11_Male" H 6158 6040 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x11_P2.54mm_Vertical" H 6050 5450 50  0001 C CNN
+F 3 "~" H 6050 5450 50  0001 C CNN
+	1    6050 5450
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
