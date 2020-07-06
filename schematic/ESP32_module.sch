@@ -187,7 +187,7 @@ AR Path="/5EEBC77F" Ref="J?"  Part="1"
 AR Path="/5ED629AF/5EEBC77F" Ref="J1"  Part="1" 
 F 0 "J1" H 5900 2067 50  0000 C CNN
 F 1 "Conn_02x03_Odd_Even" H 5900 1976 50  0000 C CNN
-F 2 "Connector_PinHeader_1.27mm:PinHeader_2x03_P1.27mm_Vertical_SMD" H 5850 1750 50  0001 C CNN
+F 2 "Apsu:PinHeader_2x03_P1.27mm_Vertical_IDC" H 5850 1750 50  0001 C CNN
 F 3 "~" H 5850 1750 50  0001 C CNN
 	1    5850 1750
 	1    0    0    -1  

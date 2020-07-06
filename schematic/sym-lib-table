@@ -1,4 +1,5 @@
 (sym_lib_table
   (lib (name Apsu_Library)(type Legacy)(uri ${KIPRJMOD}/Apsu_Library.lib)(options "")(descr ""))
   (lib (name eec)(type Legacy)(uri ${KIPRJMOD}/lib/eec.lib)(options "")(descr ""))
+  (lib (name Apsu-rescue)(type Legacy)(uri ${KIPRJMOD}/Apsu-rescue.lib)(options "")(descr ""))
 )

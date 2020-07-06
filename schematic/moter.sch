@@ -29,7 +29,7 @@ AR Path="/5EF432FA" Ref="U?"  Part="1"
 AR Path="/5EF07089/5EF432FA" Ref="U2"  Part="1" 
 F 0 "U2" H 1950 3400 50  0000 C CNN
 F 1 "PCA9685PW" H 2750 3400 50  0000 C CNN
-F 2 "Package_SO:TSSOP-28_4.4x9.7mm_P0.65mm" H 2425 1575 50  0001 L CNN
+F 2 "PCA9685:NXP_Semiconductors-SOT788-1-02_2016-0-MFG" H 2425 1575 50  0001 L CNN
 F 3 "http://www.nxp.com/documents/data_sheet/PCA9685.pdf" H 2000 3250 50  0001 C CNN
 	1    2400 2550
 	1    0    0    -1  
