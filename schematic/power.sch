@@ -211,19 +211,6 @@ F 3 "~" H 2250 4350 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Switch:SW_DIP_x01 SW1
-U 1 1 5EEDDF64
-P 3850 4250
-AR Path="/5EEDDF64" Ref="SW1"  Part="1" 
-AR Path="/5EEC6D97/5EEDDF64" Ref="SW1"  Part="1" 
-F 0 "SW1" H 3850 4517 50  0000 C CNN
-F 1 "SW_DIP_x01" H 3850 4426 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_MEC_5GTH9" H 3850 4250 50  0001 C CNN
-F 3 "~" H 3850 4250 50  0001 C CNN
-	1    3850 4250
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector_Generic:Conn_01x02 J2
 U 1 1 5EEFF2E3
 P 8950 2100
@@ -349,39 +336,6 @@ F 3 "" H 7800 1300 50  0001 C CNN
 	1    7800 1300
 	0    1    1    0   
 $EndComp
-$Comp
-L Connector_Generic:Conn_01x02 J6
-U 1 1 5EEAAB7C
-P 7500 2400
-F 0 "J6" H 7418 2075 50  0000 C CNN
-F 1 "Conn_01x02" H 7418 2166 50  0000 C CNN
-F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 7500 2400 50  0001 C CNN
-F 3 "~" H 7500 2400 50  0001 C CNN
-	1    7500 2400
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR0112
-U 1 1 5EEAC94E
-P 7700 2300
-F 0 "#PWR0112" H 7700 2050 50  0001 C CNN
-F 1 "GND" V 7705 2172 50  0000 R CNN
-F 2 "" H 7700 2300 50  0001 C CNN
-F 3 "" H 7700 2300 50  0001 C CNN
-	1    7700 2300
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:+3.3V #PWR0113
-U 1 1 5EEACE9F
-P 7700 2400
-F 0 "#PWR0113" H 7700 2250 50  0001 C CNN
-F 1 "+3.3V" V 7715 2528 50  0000 L CNN
-F 2 "" H 7700 2400 50  0001 C CNN
-F 3 "" H 7700 2400 50  0001 C CNN
-	1    7700 2400
-	0    1    1    0   
-$EndComp
 Text GLabel 7300 1400 0    50   Input ~ 0
 I2C-SDA
 Text GLabel 7300 1500 0    50   Input ~ 0
@@ -402,92 +356,6 @@ Text GLabel 7800 1700 2    50   Input ~ 0
 SPI-SS0
 Text GLabel 7800 1800 2    50   Input ~ 0
 SPI-SS2
-$Comp
-L Connector_Generic:Conn_02x06_Odd_Even J8
-U 1 1 5EEB27C4
-P 8950 1500
-F 0 "J8" H 9000 1917 50  0000 C CNN
-F 1 "Conn_02x06_Odd_Even" H 9000 1826 50  0000 C CNN
-F 2 "Connector_IDC:IDC-Header_2x06_P2.54mm_Vertical" H 8950 1500 50  0001 C CNN
-F 3 "~" H 8950 1500 50  0001 C CNN
-	1    8950 1500
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0114
-U 1 1 5EEB27CA
-P 8750 1300
-F 0 "#PWR0114" H 8750 1050 50  0001 C CNN
-F 1 "GND" V 8755 1172 50  0000 R CNN
-F 2 "" H 8750 1300 50  0001 C CNN
-F 3 "" H 8750 1300 50  0001 C CNN
-	1    8750 1300
-	0    1    1    0   
-$EndComp
-$Comp
-L power:+3.3V #PWR0115
-U 1 1 5EEB27D0
-P 9250 1300
-F 0 "#PWR0115" H 9250 1150 50  0001 C CNN
-F 1 "+3.3V" V 9265 1428 50  0000 L CNN
-F 2 "" H 9250 1300 50  0001 C CNN
-F 3 "" H 9250 1300 50  0001 C CNN
-	1    9250 1300
-	0    1    1    0   
-$EndComp
-Text GLabel 8750 1400 0    50   Input ~ 0
-I2C-SDA
-Text GLabel 8750 1500 0    50   Input ~ 0
-RS485-A
-Text GLabel 8750 1600 0    50   Input ~ 0
-SPI-MOSI
-Text GLabel 8750 1700 0    50   Input ~ 0
-SPI-MISO
-Text GLabel 8750 1800 0    50   Input ~ 0
-SPI-SS1
-Text GLabel 9250 1400 2    50   Input ~ 0
-I2C-SCL
-Text GLabel 9250 1500 2    50   Input ~ 0
-RS485-B
-Text GLabel 9250 1600 2    50   Input ~ 0
-SPI-SCLK
-Text GLabel 9250 1700 2    50   Input ~ 0
-SPI-SS0
-Text GLabel 9250 1800 2    50   Input ~ 0
-SPI-SS2
-$Comp
-L power:GND #PWR0116
-U 1 1 5EEB410E
-P 7700 2800
-F 0 "#PWR0116" H 7700 2550 50  0001 C CNN
-F 1 "GND" V 7705 2672 50  0000 R CNN
-F 2 "" H 7700 2800 50  0001 C CNN
-F 3 "" H 7700 2800 50  0001 C CNN
-	1    7700 2800
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:+3.3V #PWR0117
-U 1 1 5EEB4114
-P 7700 2900
-F 0 "#PWR0117" H 7700 2750 50  0001 C CNN
-F 1 "+3.3V" V 7715 3028 50  0000 L CNN
-F 2 "" H 7700 2900 50  0001 C CNN
-F 3 "" H 7700 2900 50  0001 C CNN
-	1    7700 2900
-	0    1    1    0   
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x02 J7
-U 1 1 5EEB4108
-P 7500 2900
-F 0 "J7" H 7418 2575 50  0000 C CNN
-F 1 "Conn_01x02" H 7418 2666 50  0000 C CNN
-F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 7500 2900 50  0001 C CNN
-F 3 "~" H 7500 2900 50  0001 C CNN
-	1    7500 2900
-	-1   0    0    1   
-$EndComp
 $Comp
 L Device:Fuse F1
 U 1 1 5EEFCFCC
@@ -560,8 +428,6 @@ Wire Wire Line
 Connection ~ 3400 3600
 Wire Wire Line
 	3400 4000 3400 4250
-Wire Wire Line
-	3400 4250 3550 4250
 Connection ~ 3400 4000
 Wire Wire Line
 	2450 4350 3600 4350
@@ -710,10 +576,10 @@ F 3 "" H 5900 1950 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L power:+3.3V #PWR?
+L power:+3.3V #PWR0123
 U 1 1 5EFBA46A
 P 3350 2100
-F 0 "#PWR?" H 3350 1950 50  0001 C CNN
+F 0 "#PWR0123" H 3350 1950 50  0001 C CNN
 F 1 "+3.3V" H 3365 2273 50  0000 C CNN
 F 2 "" H 3350 2100 50  0001 C CNN
 F 3 "" H 3350 2100 50  0001 C CNN
@@ -740,4 +606,19 @@ Wire Wire Line
 Connection ~ 3150 1800
 Wire Wire Line
 	3150 1800 3150 1750
+$Comp
+L Device:R R6
+U 1 1 5F06EAD5
+P 3250 4250
+F 0 "R6" V 3043 4250 50  0000 C CNN
+F 1 "R" V 3134 4250 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3180 4250 50  0001 C CNN
+F 3 "~" H 3250 4250 50  0001 C CNN
+	1    3250 4250
+	0    1    1    0   
+$EndComp
+Connection ~ 3400 4250
+Connection ~ 3100 4250
+Wire Wire Line
+	3400 4250 4150 4250
 $EndSCHEMATC
