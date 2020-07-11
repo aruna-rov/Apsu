@@ -1,0 +1,45 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# MAX6682MUA+T-eec
+#
+DEF MAX6682MUA+T-eec U 0 40 Y Y 1 L N
+F0 "U" 0 200 50 H V L CNN
+F1 "MAX6682MUA+T-eec" 0 300 50 H V L CNN
+F2 "Maxim-MAX6682MUA+T-*" 0 400 50 H I L CNN
+F3 "http://datasheets.maximintegrated.com/en/ds/MAX6682.pdf" 0 500 50 H I L CNN
+F4 "MO-187" 0 600 50 H I L CNN "Code  JEDEC"
+F5 "Manufacturer URL" 0 700 50 H I L CNN "Component Link 1 Description"
+F6 "http://www.maximintegrated.com/" 0 800 50 H I L CNN "Component Link 1 URL"
+F7 "Package Specification" 0 900 50 H I L CNN "Component Link 3 Description"
+F8 "http://pdfserv.maximintegrated.com/package_dwgs/21-0036.PDF" 0 1000 50 H I L CNN "Component Link 3 URL"
+F9 "Rev. 0" 0 1100 50 H I L CNN "Datasheet Version"
+F10 "Thermistor-to-Digital Converter" 0 1200 50 H I L CNN "Functions"
+F11 "3-Wire/SPI" 0 1300 50 H I L CNN "Interface"
+F12 "Surface Mount" 0 1400 50 H I L CNN "Mounting Technology"
+F13 "8-Pin Micro-MAX, Thin Shrink Small-Outline (U8+1), Body 3 x 3 mm, Pitch 0.65 mm" 0 1500 50 H I L CNN "Package Description"
+F14 "Rev. L, 08/2009" 0 1600 50 H I L CNN "Package Version"
+F15 "Tape and Reel" 0 1700 50 H I L CNN "Packing"
+F16 "No" 0 1800 50 H I L CNN "Parasite Pwr"
+F17 "IC" 0 1900 50 H I L CNN "category"
+F18 "1312378" 0 2000 50 H I L CNN "ciiva ids"
+F19 "09b1de35e41fc57e" 0 2100 50 H I L CNN "library id"
+F20 "Maxim" 0 2200 50 H I L CNN "manufacturer"
+F21 "U8+1" 0 2300 50 H I L CNN "package"
+F22 "1372769049" 0 2400 50 H I L CNN "release date"
+F23 "6156FE9F-94A8-48C1-B2C9-10D04B6E239C" 0 2500 50 H I L CNN "vault revision"
+F24 "yes" 0 2600 50 H I L CNN "imported"
+DRAW
+S 100 100 700 -700 1 1 0 f
+X IC 1 800 0 100 L 40 40 1 1 P
+X R+ 2 800 -200 100 L 40 40 1 1 O
+X R- 3 800 -400 100 L 40 40 1 1 I
+X GND 4 800 -600 100 L 40 40 1 1 W
+X ~CS~ 5 0 -200 100 R 40 40 1 1 I
+X SO 6 0 -100 100 R 40 40 1 1 U
+X SCK 7 0 0 100 R 40 40 1 1 I C
+X VCC 8 0 -600 100 R 40 40 1 1 W
+ENDDRAW
+ENDDEF
+#
+#End Library
