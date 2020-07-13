@@ -115,7 +115,7 @@ AR Path="/5EEDDF32" Ref="D1"  Part="1"
 AR Path="/5EEC6D97/5EEDDF32" Ref="D1"  Part="1" 
 F 0 "D1" V 5954 4679 50  0000 L CNN
 F 1 "D" V 6045 4679 50  0000 L CNN
-F 2 "Diode_SMD:D_0805_2012Metric_Castellated" H 6000 4600 50  0001 C CNN
+F 2 "Diode_THT:D_DO-201AD_P15.24mm_Horizontal" H 6000 4600 50  0001 C CNN
 F 3 "~" H 6000 4600 50  0001 C CNN
 	1    6000 4600
 	0    1    1    0   
