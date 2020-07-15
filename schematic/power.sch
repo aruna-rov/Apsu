@@ -52,32 +52,6 @@ F 3 "" H 4150 4250 50  0001 C CNN
 	1    4150 4250
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:C C2
-U 1 1 5EEDDF18
-P 6600 4600
-AR Path="/5EEDDF18" Ref="C2"  Part="1" 
-AR Path="/5EEC6D97/5EEDDF18" Ref="C5"  Part="1" 
-F 0 "C2" H 6715 4646 50  0000 L CNN
-F 1 "C220uF" H 6715 4555 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6638 4450 50  0001 C CNN
-F 3 "~" H 6600 4600 50  0001 C CNN
-	1    6600 4600
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C1
-U 1 1 5EEDDF1E
-P 4150 4400
-AR Path="/5EEDDF1E" Ref="C1"  Part="1" 
-AR Path="/5EEC6D97/5EEDDF1E" Ref="C4"  Part="1" 
-F 0 "C1" H 4265 4446 50  0000 L CNN
-F 1 "C680uF" H 4265 4355 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4188 4250 50  0001 C CNN
-F 3 "~" H 4150 4400 50  0001 C CNN
-	1    4150 4400
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4750 4250 4150 4250
 Connection ~ 4150 4250
@@ -114,7 +88,7 @@ P 6000 4600
 AR Path="/5EEDDF32" Ref="D1"  Part="1" 
 AR Path="/5EEC6D97/5EEDDF32" Ref="D1"  Part="1" 
 F 0 "D1" V 5954 4679 50  0000 L CNN
-F 1 "D" V 6045 4679 50  0000 L CNN
+F 1 "1N5822" V 6045 4679 50  0000 L CNN
 F 2 "Diode_THT:D_DO-201AD_P15.24mm_Horizontal" H 6000 4600 50  0001 C CNN
 F 3 "~" H 6000 4600 50  0001 C CNN
 	1    6000 4600
@@ -127,8 +101,8 @@ P 6250 4450
 AR Path="/5EEDDF38" Ref="L1"  Part="1" 
 AR Path="/5EEC6D97/5EEDDF38" Ref="L1"  Part="1" 
 F 0 "L1" V 6440 4450 50  0000 C CNN
-F 1 "L33uH" V 6349 4450 50  0000 C CNN
-F 2 "Inductor_SMD:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 6250 4450 50  0001 C CNN
+F 1 "68uH" V 6349 4450 50  0000 C CNN
+F 2 "Inductor_SMD:L_Wuerth_WE-PD-Typ-7345" H 6250 4450 50  0001 C CNN
 F 3 "~" H 6250 4450 50  0001 C CNN
 	1    6250 4450
 	0    -1   -1   0   
@@ -196,7 +170,6 @@ Wire Wire Line
 	3600 4350 3600 4550
 Wire Wire Line
 	3600 4550 4150 4550
-Connection ~ 4150 4550
 $Comp
 L Connector_Generic:Conn_01x02 J1
 U 1 1 5EEDDF5E
@@ -621,4 +594,28 @@ Connection ~ 3400 4250
 Connection ~ 3100 4250
 Wire Wire Line
 	3400 4250 4150 4250
+$Comp
+L Device:CP C2
+U 1 1 5F0E578E
+P 6600 4600
+F 0 "C2" H 6718 4646 50  0000 L CNN
+F 1 "220uF" H 6718 4555 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P5.00mm" H 6638 4450 50  0001 C CNN
+F 3 "https://datasheet.octopart.com/EEUFM1V221L-Panasonic-datasheet-13266715.pdf" H 6600 4600 50  0001 C CNN
+F 4 "35" H 6600 4600 50  0001 C CNN "volt"
+	1    6600 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C1
+U 1 1 5F0ECFE3
+P 4150 4400
+F 0 "C1" H 4268 4446 50  0000 L CNN
+F 1 "220uF" H 4268 4355 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P5.00mm" H 4188 4250 50  0001 C CNN
+F 3 "~" H 4150 4400 50  0001 C CNN
+	1    4150 4400
+	1    0    0    -1  
+$EndComp
+Connection ~ 4150 4550
 $EndSCHEMATC
