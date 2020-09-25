@@ -30,12 +30,12 @@ extern "C" void app_main(void) {
     ESP_ERROR_CHECK(i2c_param_config(I2C_NUM_0, &config));
     ESP_ERROR_CHECK(i2c_driver_install(I2C_NUM_0, I2C_MODE_MASTER, NULL, NULL, ESP_INTR_FLAG_IRAM));
 
-
     //	sis
     pthread_mutex_t I2C_mutex;
     pthread_mutex_init(&I2C_mutex, NULL);
     sis::reporter::start();
-    sis::Performer* water_sensor = new sis::ADS101xWaterSensor(driver::ADS101x::MUX::AINp2_AINnGND,(uint8_t) I2C_address::ADS1015, &I2C_mutex, "HERE" );
+    sis::Performer *water_sensor = new sis::ADS101xWaterSensor(driver::ADS101x::MUX::AINp2_AINnGND,
+                                                               (uint8_t) I2C_address::ADS1015, &I2C_mutex, "HERE");
     log::set_level("ADS101xWaterSensor", log::level_t::DEBUG);
 //	comm setup
     uart_config_t rs485_config = {
@@ -63,64 +63,31 @@ extern "C" void app_main(void) {
         log_m->error("failed to start comm: %s", err_to_char.at(comm_err));
     }
 
-//	control setup
-    const auto left_bottom_bldc_pin = (gpio_num_t) 26;
-    const auto left_top_bldc_pin = (gpio_num_t) 25;
-    const auto right_bottom_bldc_pin = (gpio_num_t) 19;
-    const auto right_top_bldc_pin = (gpio_num_t) 21;
     const auto left_z_bldc_pin = (gpio_num_t) 33;
     const auto right_z_bldc_pin = (gpio_num_t) 32;
 
-    const mcpwm_config_t bldc_pwm_config = {
-            .frequency = 50,
-            .cmpr_a = 0,
-            .cmpr_b = 0,
-            .duty_mode = MCPWM_DUTY_MODE_0,
-            .counter_mode = MCPWM_UP_COUNTER
-    };
     const float bldc_min_cycle = 5.f;
     const float bldc_max_cycle = 10.f;
 
-    control::Actuator *left_bottom_bldc_driver = new control::Pwm(control::axis_mask_t::X,
-                                                                  left_bottom_bldc_pin,
-                                                                  MCPWM_UNIT_1,
-                                                                  MCPWM_TIMER_0,
-                                                                  MCPWM0A,
-                                                                  MCPWM_OPR_A,
-                                                                  control::direction_t::PLUS,
-                                                                  bldc_pwm_config,
-                                                                  bldc_min_cycle,
-                                                                  bldc_max_cycle);
-    control::Actuator *left_top_bldc_driver = new control::Pwm(control::axis_mask_t::X,
-                                                               left_top_bldc_pin,
-                                                               MCPWM_UNIT_0,
-                                                               MCPWM_TIMER_0,
-                                                               MCPWM0B,
-                                                               MCPWM_OPR_B,
-                                                               control::direction_t::MIN,
-                                                               bldc_pwm_config,
-                                                               bldc_min_cycle,
-                                                               bldc_max_cycle);
-    control::Actuator *right_bottom_bldc_driver = new control::Pwm(control::axis_mask_t::X,
-                                                                   right_bottom_bldc_pin,
-                                                                   MCPWM_UNIT_1,
-                                                                   MCPWM_TIMER_1,
-                                                                   MCPWM1A,
-                                                                   MCPWM_OPR_A,
-                                                                   control::direction_t::PLUS,
-                                                                   bldc_pwm_config,
-                                                                   bldc_min_cycle,
+    control::Actuator *left_bottom_bldc_driver = new control::PCA9685(control::axis_mask_t::X,
+                                                                      control::direction_t::PLUS,
+                                                                      static_cast<uint8_t>(PCA9685_LED::BLDC_bottom_left),
+                                                                      (uint8_t) I2C_address::PCA9685, bldc_min_cycle,
+                                                                      bldc_max_cycle);
+
+    control::Actuator *left_top_bldc_driver = new control::PCA9685(control::axis_mask_t::X, control::direction_t::MIN,
+                                                                   static_cast<uint8_t>(PCA9685_LED::BLDC_top_left),
+                                                                   (uint8_t) I2C_address::PCA9685, bldc_min_cycle,
                                                                    bldc_max_cycle);
-    control::Actuator *right_top_bldc_driver = new control::Pwm(control::axis_mask_t::X,
-                                                                right_top_bldc_pin,
-                                                                MCPWM_UNIT_0,
-                                                                MCPWM_TIMER_1,
-                                                                MCPWM1B,
-                                                                MCPWM_OPR_B,
-                                                                control::direction_t::MIN,
-                                                                bldc_pwm_config,
-                                                                bldc_min_cycle,
-                                                                bldc_max_cycle);
+    control::Actuator *right_bottom_bldc_driver = new control::PCA9685(control::axis_mask_t::X,
+                                                                       control::direction_t::PLUS,
+                                                                       static_cast<uint8_t>(PCA9685_LED::BLDC_bottom_right),
+                                                                       (uint8_t) I2C_address::PCA9685, bldc_min_cycle,
+                                                                       bldc_max_cycle);
+    control::Actuator *right_top_bldc_driver = new control::PCA9685(control::axis_mask_t::X, control::direction_t::MIN,
+                                                                    static_cast<uint8_t>(PCA9685_LED::BLDC_top_right),
+                                                                    (uint8_t) I2C_address::PCA9685, bldc_min_cycle,
+                                                                    bldc_max_cycle);
 
     control::Actuator *left_z_driver = new control::esp32::Dshot(control::axis_mask_t::Z, control::direction_t::BOTH,
                                                                  RMT_CHANNEL_0, left_z_bldc_pin);

@@ -34,4 +34,11 @@ enum class IO {
     SPI_MOSI    = 34,
     BLDC_M4     = 35,
 };
+
+enum class PCA9685_LED {
+    BLDC_bottom_right = 15,
+    BLDC_top_right = 13,
+    BLDC_top_left = 12,
+    BLDC_bottom_left = 14,
+};
 #endif //APSU_MAP_H
