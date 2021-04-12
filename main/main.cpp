@@ -14,29 +14,27 @@ log::channel_t *log_m;
 extern "C" void app_main(void) {
     err_t comm_err = err_t::OK;
     err_t con_err = err_t::OK;
-    xTaskCreate(blinky::start_blinky_task, "blink", 2000, NULL, NULL, NULL);
     log_m = new log::channel_t("main", log::level_t::VERBOSE);
 
 //	start I2C
-    i2c_config_t config = {
+    const i2c_config_t config = {
             .mode = I2C_MODE_MASTER,
             .sda_io_num = static_cast<gpio_num_t>(IO::I2C_SDA),
-            .sda_pullup_en = GPIO_PULLUP_DISABLE,
             .scl_io_num = static_cast<gpio_num_t>(IO::I2C_SCL),
+            .sda_pullup_en = GPIO_PULLUP_DISABLE,
             .scl_pullup_en = GPIO_PULLUP_DISABLE,
             {.master = {.clk_speed = 10000,}}
     };
-//    start I2C driver
-    ESP_ERROR_CHECK(i2c_param_config(I2C_NUM_0, &config));
-    ESP_ERROR_CHECK(i2c_driver_install(I2C_NUM_0, I2C_MODE_MASTER, NULL, NULL, ESP_INTR_FLAG_IRAM));
+    driver::ESP32_I2C_master i2c(I2C_NUM_0, &config);
 
     //	sis
     pthread_mutex_t I2C_mutex;
     pthread_mutex_init(&I2C_mutex, NULL);
     sis::reporter::start();
-    sis::Performer *water_sensor = new sis::ADS101xWaterSensor(driver::ADS101x::MUX::AINp2_AINnGND,
-                                                               (uint8_t) I2C_address::ADS1015, &I2C_mutex, "HERE");
-    log::set_level("ADS101xWaterSensor", log::level_t::DEBUG);
+
+    driver::ADC *water_adc = new driver::ADS101x(driver::ADS101x::MUX::AINp2_AINnGND, &i2c,
+                                                 static_cast<uint8_t>(I2C_address::ADS1015));
+    sis::Performer *water_sensor = new sensor::Rain40x16(water_adc);
 //	comm setup
     uart_config_t rs485_config = {
             .baud_rate = 115200,
@@ -47,16 +45,9 @@ extern "C" void app_main(void) {
             .rx_flow_ctrl_thresh = 122,
             .use_ref_tick = false
     };
-    rs485_driver = new aruna::comm::UART((char *) "RS485",
-                                         UART_NUM_1,
-                                         23,
-                                         22,
-                                         18,
-                                         UART_PIN_NO_CHANGE,
-                                         rs485_config,
-                                         UART_MODE_RS485_HALF_DUPLEX,
-                                         256,
-                                         512);
+    rs485_driver = new driver::ESP32_UART(UART_NUM_0, static_cast<int>(IO::RS485_TX), static_cast<int>(IO::RS485_RX),
+                                          static_cast<int>(IO::RS485_RTS), UART_PIN_NO_CHANGE, rs485_config,
+                                          UART_MODE_RS485_HALF_DUPLEX, 256, 512);
 
     comm_err = comm::start(rs485_driver);
     if ((uint8_t) comm_err) {
@@ -69,99 +60,35 @@ extern "C" void app_main(void) {
     const float bldc_min_cycle = 5.f;
     const float bldc_max_cycle = 10.f;
 
-    control::Actuator *left_bottom_bldc_driver = new control::PCA9685(control::axis_mask_t::X,
-                                                                      control::direction_t::PLUS,
-                                                                      static_cast<uint8_t>(PCA9685_LED::BLDC_bottom_left),
-                                                                      (uint8_t) I2C_address::PCA9685, bldc_min_cycle,
-                                                                      bldc_max_cycle);
+    driver::ESP32_RMT_Dshot *drivers[3];
 
-    control::Actuator *left_top_bldc_driver = new control::PCA9685(control::axis_mask_t::X, control::direction_t::MIN,
-                                                                   static_cast<uint8_t>(PCA9685_LED::BLDC_top_left),
-                                                                   (uint8_t) I2C_address::PCA9685, bldc_min_cycle,
-                                                                   bldc_max_cycle);
-    control::Actuator *right_bottom_bldc_driver = new control::PCA9685(control::axis_mask_t::X,
-                                                                       control::direction_t::PLUS,
-                                                                       static_cast<uint8_t>(PCA9685_LED::BLDC_bottom_right),
-                                                                       (uint8_t) I2C_address::PCA9685, bldc_min_cycle,
-                                                                       bldc_max_cycle);
-    control::Actuator *right_top_bldc_driver = new control::PCA9685(control::axis_mask_t::X, control::direction_t::MIN,
-                                                                    static_cast<uint8_t>(PCA9685_LED::BLDC_top_right),
-                                                                    (uint8_t) I2C_address::PCA9685, bldc_min_cycle,
-                                                                    bldc_max_cycle);
+    drivers[0] = new driver::ESP32_RMT_Dshot(RMT_CHANNEL_0,
+                                             static_cast<gpio_num_t>(IO::BLDC_LEFT_Z));
 
-    control::Actuator *left_z_driver = new control::esp32::Dshot(control::axis_mask_t::Z, control::direction_t::BOTH,
-                                                                 RMT_CHANNEL_0, left_z_bldc_pin);
-    control::Actuator *right_z_driver = new control::esp32::Dshot(control::axis_mask_t::Z, control::direction_t::BOTH,
-                                                                  RMT_CHANNEL_1, right_z_bldc_pin);
+    drivers[1] = new driver::ESP32_RMT_Dshot(RMT_CHANNEL_1,
+                                             static_cast<gpio_num_t>(IO::BLDC_RIGHT_Z));
 
-    control::ActuatorSet::transform_t forward_transformers[]{
-//			bldc yaw forward
-            {
-                    .driver = left_bottom_bldc_driver,
-                    .transform_to = control::axis_mask_t::YAW,
-                    .flip_direction = false,
-                    .axis = control::axis_mask_t::X,
-                    .speed_percentage = 100.0
-            },
-//            bldc yaw forward and Y forward
-            {
-                    .driver = right_top_bldc_driver,
-                    .transform_to = (control::axis_mask_t) ((uint8_t) control::axis_mask_t::YAW |
-                                                            (uint8_t) control::axis_mask_t::Y),
-                    .flip_direction = true,
-                    .axis = control::axis_mask_t::X,
-                    .speed_percentage = 100.0
-            },
-//            bldc yaw backward and Y backwards
-            {
-                    .driver = left_top_bldc_driver,
-                    .transform_to = (control::axis_mask_t) ((uint8_t) control::axis_mask_t::YAW |
-                                                            (uint8_t) control::axis_mask_t::Y),
-                    .flip_direction = false,
-                    .axis = control::axis_mask_t::X,
-                    .speed_percentage = 100.0
-            },
-//            bldc yaw backwards
-            {
-                    .driver = right_bottom_bldc_driver,
-                    .transform_to = control::axis_mask_t::YAW,
-                    .flip_direction = true,
-                    .axis = control::axis_mask_t::X,
-                    .speed_percentage = 100.0
-            },
-//          bldc Y forward
-            {
-                    .driver = right_bottom_bldc_driver,
-                    .transform_to = control::axis_mask_t::Y,
-                    .flip_direction = false,
-                    .axis = control::axis_mask_t::X,
-                    .speed_percentage = 100.0
-            },
-//            bldc Y backwards
-            {
-                    .driver = left_bottom_bldc_driver,
-                    .transform_to = control::axis_mask_t::Y,
-                    .flip_direction = true,
-                    .axis = control::axis_mask_t::X,
-                    .speed_percentage = 100.0
-            }
-    };
+    drivers[2] = new driver::ESP32_RMT_Dshot(RMT_CHANNEL_2,
+                                             static_cast<gpio_num_t>(IO::BLDC_M3));
 
-    control::Actuator *forward_drivers = new control::ActuatorSet(forward_transformers, 6);
-    con_err = control::register_driver(forward_drivers);
-    if ((uint8_t) con_err) {
-        log_m->error("failed to register forward drivers: %s", err_to_char.at(con_err));
+//    drivers[3] = new driver::ESP32_RMT_Dshot(RMT_CHANNEL_3,
+//                                             static_cast<gpio_num_t>(IO::BLDC_M4));
+// TODO pin 35 is input only!
+
+    for (int i = 0; i < 3; ++i) {
+        drivers[i]->set_axis(movement::axis_mask_t::X);
+        drivers[i]->set_bidirectional(true);
+        drivers[i]->arm_ESC();
+        con_err = movement::register_driver(drivers[i]);
+        if ((uint8_t) con_err) {
+            log_m->error("failed to register driver: %s", err_to_char.at(con_err));
+        }
+
     }
-    con_err = control::register_driver(left_z_driver);
-    if ((uint8_t) con_err) {
-        log_m->error("failed to register left z driver: %s", err_to_char.at(con_err));
+
+    if ((uint8_t) movement::start()) {
+        log_m->error("failed to start movement");
     }
-    con_err = control::register_driver(right_z_driver);
-    if ((uint8_t) con_err) {
-        log_m->error("failed to register right z driver: %s", err_to_char.at(con_err));
-    }
-    if ((uint8_t) control::start()) {
-        log_m->error("failed to start control");
-    }
+    movement::set_speed(movement::axis_mask_t::X, 65535);
     vTaskSuspend(NULL);
 }
